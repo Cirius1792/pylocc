@@ -1,0 +1,25 @@
+[project]
+name = "pylocc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ciro Lucio Tecce", email = "cirolucio.tecce@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.2.1",
+    "prettytable>=3.16.0",
+]
+
+[project.scripts]
+pylocc = "pylocc:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]

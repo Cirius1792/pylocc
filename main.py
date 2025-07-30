@@ -1,0 +1,70 @@
+import os
+from typing import List
+import click
+from pathlib import Path
+
+from pylocc.processor import Processor, ProcessorConfiguration
+from pylocc.reporter import report_by_file
+
+# @click.group()
+# def pylocc():
+#     pass
+
+def load_languguage_config_from_json(config_file) ->List[ProcessorConfiguration]:
+    """Load language configurations from a JSON file."""
+    import json
+    with open(config_file, 'r', encoding='utf-8') as f:
+        config_data = json.load(f)
+    return ProcessorConfiguration.load_from_dict(config_data)
+
+# Alternative implementation using pathlib (more modern approach)
+def get_all_file_paths_pathlib(folder: str) -> List[str]:
+    """
+    Returns a list of all file paths using pathlib (more modern approach).
+    
+    Args:
+        folder (str): Path to the root folder to search
+        
+    Returns:
+        List[str]: List of absolute file paths as strings
+    """
+    folder_path = Path(folder)
+    
+    if not folder_path.exists():
+        raise FileNotFoundError(f"The path '{folder_path}' does not exist")
+    if not folder_path.is_dir():
+        raise NotADirectoryError(f"The path '{folder_path}' is not a directory")
+    
+    # Use rglob to recursively find all files
+    file_paths = [str(file.resolve()) for file in folder_path.rglob('*') if file.is_file()]
+    
+    return file_paths
+
+@click.command()
+@click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True))
+def pylocc(file):
+    """Run pylocc on the specified file or directory."""
+    if os.path.isdir(file):
+        click.echo(f"Processing directory: {file}")
+        files = get_all_file_paths_pathlib(file)
+    else:
+        click.echo(f"Processing file: {file}")
+        files = [file]
+    processor = Processor()
+    reports = {}
+    for f in files:
+        try:
+            with open(f, 'r', encoding='utf-8') as f_handle:
+                content = f_handle.readlines()
+            report = processor.process(content, os.path.splitext(f)[1][1:])
+            reports[f] = report
+        except:
+            click.echo(f"Error processing file {f}. Skipping...")
+            continue
+    if reports: 
+        report_table = report_by_file(reports)
+        click.echo(report_table)
+
+
+
+pylocc()
