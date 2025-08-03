@@ -6,9 +6,6 @@ from pathlib import Path
 from pylocc.processor import Processor, ProcessorConfiguration
 from pylocc.reporter import report_aggregate, report_by_file
 
-# @click.group()
-# def pylocc():
-#     pass
 
 def load_languguage_config_from_json(config_file) ->List[ProcessorConfiguration]:
     """Load language configurations from a JSON file."""
@@ -46,37 +43,45 @@ def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -
 
 @click.command()
 @click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True))
-@click.option('--by-file', is_flag=True, help='Generate report by file.')
-def pylocc(file, by_file):
+@click.option('--by-file', is_flag=True,
+              help='Generate report by file.')
+@click.option('--output', type=click.Path(exists=False, dir_okay=False, readable=True, writable=True),
+              help='Stores the output report to the given path')
+def pylocc(file, by_file, output):
     """Run pylocc on the specified file or directory."""
+    # FIXME avoid using the hard coded path here. The language.json file should be shipped along with the application
     configs = load_languguage_config_from_json("./language.json")
     supported_extensions = [ext for config in configs for ext in config.file_extensions]
+
     if os.path.isdir(file):
         click.echo(f"Processing directory: {file}")
         files = get_all_file_paths_pathlib(file, supported_extensions=supported_extensions)
     else:
         click.echo(f"Processing file: {file}")
         files = [file]
+
     processor = Processor(configs)
-    reports = {}
+    per_file_reports = {}
     for f in files:
         try:
             with open(f, 'r', encoding='utf-8', errors='ignore') as f_handle:
                 content = f_handle.readlines()
             file_extension = os.path.splitext(f)[1][1:]
             report = processor.process(content, file_extension=file_extension)
-            reports[f] = report
+            per_file_reports[f] = report
         except Exception as e:
             click.echo(f"Error processing file {f}: {e} Skipping...")
             continue
-    if reports: 
+    if per_file_reports: 
         report_table= ''
         if by_file:
-            report_table = report_by_file(reports)
+            report_table = report_by_file(per_file_reports)
         else:
-            report_table = report_aggregate(reports)
-        click.echo(report_table)
-
+            report_table = report_aggregate(per_file_reports)
+        click.echo(str(report_table))
+        if output: 
+            with open(output, 'w', encoding='utf-8') as output_file:
+                output_file.write(report_table.get_formatted_string('csv'))
 
 
 pylocc()
