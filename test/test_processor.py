@@ -45,6 +45,10 @@ class TestProcessor(TestCase):
         report = self.processor.process(text)
         self.assertEqual(report.code, 2)
 
+        text = ["line 1", "    ", "line 3"]
+        report = self.processor.process(text)
+        self.assertEqual(report.code, 2)
+
     def test_should_count_total_lines_in_file(self):
         text = ["line 1", "line 2", "line 3"]
         report = self.processor.process(text)
