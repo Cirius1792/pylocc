@@ -1,8 +1,9 @@
-from typing import Dict
+from typing import Dict, List
 from pylocc.processor import Report
 from prettytable import PrettyTable
 
 file_path_header = "File Path"
+total_file_header = "Total Files"
 total_line_header = "Total Lines"
 code_line_header = "Code Lines"
 comment_line_header = "Comment Lines"
@@ -15,7 +16,8 @@ def report_by_file(processed: Dict[str, Report]) -> str:
     report = PrettyTable()
     report.field_names = [file_path_header, total_line_header,
                           code_line_header, comment_line_header, blank_line_header]
-    report = initialize_formatters(report)
+    # Initialize integer formatters for the report
+    report = initialize_int_formatters(report, report.field_names[1:])
     for file_path, report_data in processed.items():
         report.add_row([
             file_path,
@@ -29,25 +31,29 @@ def report_by_file(processed: Dict[str, Report]) -> str:
 
 def report_aggregate(processed: Dict[str, Report]) -> str:
     """Given the report by file, prepares a table containing the overall results."""
-    total_lines = sum(report_data.total for report_data in processed.values())
-    code_lines = sum(report_data.code for report_data in processed.values())
-    blank_lines = sum(report_data.blanks for report_data in processed.values())
-    comment_lines = sum(
-        report_data.comments for report_data in processed.values())
+    total_lines = 0
+    code_lines = 0
+    blank_lines = 0
+    comment_lines = 0
+    total_files = len(processed)
+    for report_data in processed.values():
+        total_lines += report_data.total
+        code_lines += report_data.code
+        blank_lines += report_data.blanks
+        comment_lines += report_data.comments
+
     report = PrettyTable()
-    report.field_names = [total_line_header,
+    report.field_names = [total_file_header, total_line_header,
                           code_line_header, comment_line_header, blank_line_header]
-    report = initialize_formatters(report)
-    report.add_row([total_lines, code_lines, comment_lines, blank_lines])
+    report = initialize_int_formatters(report, report.field_names)
+    report.add_row([total_files, total_lines, code_lines, comment_lines, blank_lines])
     return str(report)
 
 
-def initialize_formatters(t: PrettyTable) -> PrettyTable:
-    """Initializes the formatters for the PrettyTable."""
-    t.custom_format[total_line_header] = format_number_with_thousand_separator
-    t.custom_format[code_line_header] = format_number_with_thousand_separator
-    t.custom_format[comment_line_header] = format_number_with_thousand_separator
-    t.custom_format[blank_line_header] = format_number_with_thousand_separator
+def initialize_int_formatters(t: PrettyTable, headers:List[str]) -> PrettyTable:
+    """Initialize integer formatters for the provided tabel and the given headers"""
+    for header in headers:
+        t.custom_format[header] = format_number_with_thousand_separator
     return t
 
 
