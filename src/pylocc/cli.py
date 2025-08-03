@@ -7,12 +7,21 @@ from pylocc.processor import Processor, ProcessorConfiguration
 from pylocc.reporter import report_aggregate, report_by_file
 
 
-def load_languguage_config_from_json(config_file) ->List[ProcessorConfiguration]:
-    """Load language configurations from a JSON file."""
+def load_language_config() -> List[ProcessorConfiguration]:
+    """Load language configurations from the packaged JSON file."""
     import json
-    with open(config_file, 'r', encoding='utf-8') as f:
-        config_data = json.load(f)
-    return ProcessorConfiguration.load_from_dict(config_data)
+    from importlib import resources
+
+    try:
+        # Use importlib.resources to access the file
+        with resources.files('pylocc').joinpath('language.json').open('r', encoding='utf-8') as f:
+            config_data = json.load(f)
+        return ProcessorConfiguration.load_from_dict(config_data)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        # Handle potential errors during file loading or parsing
+        click.echo(f"Error loading language configuration: {e}", err=True)
+        raise click.Abort()
+
 
 def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -> List[str]:
     """
@@ -49,8 +58,7 @@ def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -
               help='Stores the output report to the given path')
 def pylocc(file, by_file, output):
     """Run pylocc on the specified file or directory."""
-    # FIXME avoid using the hard coded path here. The language.json file should be shipped along with the application
-    configs = load_languguage_config_from_json("./language.json")
+    configs = load_language_config()
     supported_extensions = [ext for config in configs for ext in config.file_extensions]
 
     if os.path.isdir(file):
