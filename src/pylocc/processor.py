@@ -1,11 +1,12 @@
 from dataclasses import dataclass
-from typing import List, Tuple, Iterable
+from typing import Dict, List, Tuple, Iterable
 
 
 class Report:
-    __slots__ = ['code', 'comments', 'blanks']
+    __slots__ = ['file_type', 'code', 'comments', 'blanks']
 
-    def __init__(self, code: int = 0, comments: int = 0, blanks: int = 0):
+    def __init__(self,file_type, code: int = 0, comments: int = 0, blanks: int = 0):
+        self.file_type=file_type
         self.code = code
         self.comments = comments
         self.blanks = blanks
@@ -55,7 +56,7 @@ class Processor:
                                                                'txt'],
                                                            line_comment=["//",],
                                                            multiline_comment=[])]
-        self.config = {}
+        self.config:Dict[str, ProcessorConfiguration] = {}
         for c in configurations:
             for ft in c.file_extensions:
                 self.config[ft] = c
@@ -63,10 +64,10 @@ class Processor:
 
     def process(self, text: Iterable[str], file_extension='txt') -> Report:
         """Counts the number of words in the given text."""
-        report = Report()
         file_configuration = self.config.get(
             file_extension, self.config['txt'])
 
+        report = Report(file_configuration.file_type)
         in_multi_line_comment = False
         for line in text:
             stripped_line = line.strip()
