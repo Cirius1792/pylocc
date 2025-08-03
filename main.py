@@ -4,7 +4,7 @@ import click
 from pathlib import Path
 
 from pylocc.processor import Processor, ProcessorConfiguration
-from pylocc.reporter import report_by_file
+from pylocc.reporter import report_aggregate, report_by_file
 
 # @click.group()
 # def pylocc():
@@ -42,7 +42,8 @@ def get_all_file_paths_pathlib(folder: str) -> List[str]:
 
 @click.command()
 @click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True))
-def pylocc(file):
+@click.option('--by-file', is_flag=True, help='Generate report by file.')
+def pylocc(file, by_file):
     """Run pylocc on the specified file or directory."""
     if os.path.isdir(file):
         click.echo(f"Processing directory: {file}")
@@ -54,15 +55,20 @@ def pylocc(file):
     reports = {}
     for f in files:
         try:
-            with open(f, 'r', encoding='utf-8') as f_handle:
+            with open(f, 'r', encoding='utf-8', errors='ignore') as f_handle:
                 content = f_handle.readlines()
-            report = processor.process(content, os.path.splitext(f)[1][1:])
+            file_extension = os.path.splitext(f)[1][1:]
+            report = processor.process(content, file_extension=file_extension)
             reports[f] = report
-        except:
-            click.echo(f"Error processing file {f}. Skipping...")
+        except Exception as e:
+            click.echo(f"Error processing file {f}: {e} Skipping...")
             continue
     if reports: 
-        report_table = report_by_file(reports)
+        report_table= ''
+        if by_file:
+            report_table = report_by_file(reports)
+        else:
+            report_table = report_aggregate(reports)
         click.echo(report_table)
 
 
