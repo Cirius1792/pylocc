@@ -92,4 +92,5 @@ def pylocc(file, by_file, output):
                 output_file.write(report_table.get_formatted_string('csv'))
 
 
-pylocc()
+if __name__== '__main__':
+    pylocc()
