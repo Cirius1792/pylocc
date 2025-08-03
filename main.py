@@ -17,8 +17,7 @@ def load_languguage_config_from_json(config_file) ->List[ProcessorConfiguration]
         config_data = json.load(f)
     return ProcessorConfiguration.load_from_dict(config_data)
 
-# Alternative implementation using pathlib (more modern approach)
-def get_all_file_paths_pathlib(folder: str) -> List[str]:
+def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -> List[str]:
     """
     Returns a list of all file paths using pathlib (more modern approach).
     
@@ -37,6 +36,11 @@ def get_all_file_paths_pathlib(folder: str) -> List[str]:
     
     # Use rglob to recursively find all files
     file_paths = [str(file.resolve()) for file in folder_path.rglob('*') if file.is_file()]
+
+    # Filter by supported extensions if provided
+    if supported_extensions:
+        extensions_set = set(supported_extensions)
+        file_paths = [file for file in file_paths if Path(file).suffix[1:] in extensions_set]
     
     return file_paths
 
@@ -45,13 +49,15 @@ def get_all_file_paths_pathlib(folder: str) -> List[str]:
 @click.option('--by-file', is_flag=True, help='Generate report by file.')
 def pylocc(file, by_file):
     """Run pylocc on the specified file or directory."""
+    configs = load_languguage_config_from_json("./language.json")
+    supported_extensions = [ext for config in configs for ext in config.file_extensions]
     if os.path.isdir(file):
         click.echo(f"Processing directory: {file}")
-        files = get_all_file_paths_pathlib(file)
+        files = get_all_file_paths_pathlib(file, supported_extensions=supported_extensions)
     else:
         click.echo(f"Processing file: {file}")
         files = [file]
-    processor = Processor()
+    processor = Processor(configs)
     reports = {}
     for f in files:
         try:
