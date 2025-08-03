@@ -43,8 +43,8 @@ class ProcessorConfiguration:
         assert configs is not None, "configs can't be None"
         return [ProcessorConfiguration(file_type=lang,
                                        file_extensions=lang_config['extensions'],
-                                       line_comment=lang_config['line_comment'],
-                                       multiline_comment=lang_config['multi_line'],
+                                    line_comment=lang_config['line_comment'] if 'line_comment' in lang_config else [],
+                                    multiline_comment=lang_config['multi_line'] if 'multi_line' in lang_config else []
                                        ) for lang, lang_config in configs.items()]
 
 
