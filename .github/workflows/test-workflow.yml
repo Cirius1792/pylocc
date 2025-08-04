@@ -17,11 +17,9 @@ jobs:
       - name: Run tests
         run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
 
-      - name: List files
-        run: ls -la
-
       - name: Upload coverage data
         uses: actions/upload-artifact@v4
+        include-hidden-files: true
         with:
           name: coverage-data
           path: .coverage
