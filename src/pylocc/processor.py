@@ -41,6 +41,7 @@ class ProcessorConfiguration:
 
     @staticmethod
     def load_from_dict(configs) -> List['ProcessorConfiguration']:
+        """Loads the processor configurations from a dictionary."""
         assert configs is not None, "configs can't be None"
         return [ProcessorConfiguration(file_type=lang,
                                        file_extensions=lang_config['extensions'],
@@ -60,7 +61,14 @@ class ProcessorConfigurationFactory:
 
     def get_configuration(self, file_extension: str, or_default: Optional[str] = None) -> Optional[ProcessorConfiguration]:
         """Returns the configuration for the given file extension if it exists.
-        Fallback to the default configuration provided or None otherwise."""
+        Fallback to the default configuration provided or None otherwise.
+        Args:
+            file_extension (str): The file extension to look for.
+            or_default (Optional[str]): The default configuration to return if the file extension is not found.
+        Returns:
+            Optional[ProcessorConfiguration]: The configuration for the file extension or the default configuration.
+
+        """
         if file_extension in self.configs:
             return self.configs[file_extension]
         if or_default is not None:
@@ -71,7 +79,7 @@ class ProcessorConfigurationFactory:
 class Processor:
 
     def process(self, text: Iterable[str], file_configuration: ProcessorConfiguration) -> Report:
-        """Counts the number of words in the given text."""
+        """Counts the number of lines in the given text according to the provide configuration."""
         assert file_configuration is not None, "File Configuration can't be null"
         report = Report(file_configuration.file_type)
         in_multi_line_comment = False
