@@ -1,5 +1,5 @@
 # Python Loc Counter - PYLOCC
-![Tests](https://github.com/cirius1792/pylocc/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/cirius1792/pylocc/actions/workflows/tests.yml/badge.svg) ![Coverage](coverage.svg)
 
 `pylocc` is a command-line tool for counting lines of code in various programming languages. It helps you get a quick overview of the size and composition of your codebase.
 

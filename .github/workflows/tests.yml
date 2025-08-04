@@ -11,3 +11,23 @@ on:
 jobs:
   test:
     uses: ./.github/workflows/test-workflow.yml
+
+  generate-badge:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Download coverage data
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-data
+
+      - name: Generate coverage badge
+        run: |
+          pip install coverage-badge
+          coverage-badge -o coverage.svg
+
+      - name: Commit coverage badge
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update coverage badge"
+          file_pattern: coverage.svg

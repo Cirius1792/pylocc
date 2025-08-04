@@ -15,4 +15,10 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Run tests
-        run: uv sync --locked --all-extras --dev  && uv run pytest
+        run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
+
+      - name: Upload coverage data
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-data
+          path: .coverage
