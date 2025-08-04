@@ -1,6 +1,17 @@
 name: Publish to PyPI
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
   workflow_run:
     workflows: ["Tests"]  # Replace "Test" with the exact name of your test workflow
     types:
@@ -104,6 +115,7 @@ jobs:
       - name: Commit version bump
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
+          branch: main
           commit_message: "Bump version to ${{ steps.new-version.outputs.new-version }} [skip ci]"
 
       - name: Create git tag
