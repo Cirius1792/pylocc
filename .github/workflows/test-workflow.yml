@@ -2,6 +2,14 @@ name: Reusable Test Workflow
 
 on:
   workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      upload-coverage:
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   test:
@@ -11,6 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ inputs.python-version }}
+
       - name: Install uv
         uses: astral-sh/setup-uv@v6
 
@@ -18,6 +31,7 @@ jobs:
         run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
 
       - name: Upload coverage data
+        if: ${{ inputs.upload-coverage }}
         uses: actions/upload-artifact@v4
         with:
           include-hidden-files: true
