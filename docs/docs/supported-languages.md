@@ -12,19 +12,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ABAP": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "abap"
     ],
@@ -32,8 +19,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "*",
       "\\\""
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -43,20 +29,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ABNF": {
-    "complexitychecks": [
-      "=/ ",
-      "/ ",
-      "% ",
-      "( "
-    ],
     "extensions": [
       "abnf"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -66,22 +45,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "APL": {
-    "complexitychecks": [
-      ":For ",
-      ":If ",
-      ":Case ",
-      ":CaseList ",
-      ":While ",
-      ":Repeat ",
-      ":Else ",
-      "\u2228",
-      "\u2227",
-      "\u2260",
-      "~",
-      "\u00a8",
-      "=",
-      ":"
-    ],
     "extensions": [
       "apl",
       "aplf",
@@ -92,13 +55,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "\u235d"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -108,19 +65,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ASP": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "asa",
       "asp"
@@ -129,8 +73,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "'",
       "REM"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -140,19 +83,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ASP.NET": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "asax",
       "ascx",
@@ -172,8 +102,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<%--",
         "-->"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -183,16 +112,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ATS": {
-    "complexitychecks": [
-      "if ",
-      "if(",
-      " then ",
-      " else ",
-      "case+ ",
-      "ifcase",
-      "let ",
-      "and "
-    ],
     "extensions": [
       "dats",
       "sats",
@@ -215,12 +134,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "////",
         "THISSHOULDNEVERAPPEARWEHOPE"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -231,40 +144,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "AWK": {
-    "complexitychecks": [
-      "else ",
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "awk"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ],
-    "shebangs": [
-      "awk",
-      "gawk",
-      "mawk",
-      "nawk"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -274,19 +160,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ActionScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "as"
     ],
@@ -298,12 +171,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -314,19 +181,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ada": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ada",
       "adb",
@@ -336,8 +190,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "--"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -347,19 +200,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Agda": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "agda"
     ],
@@ -371,8 +211,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -382,19 +221,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Alchemist": {
-    "complexitychecks": [
-      "+",
-      "->",
-      "!"
-    ],
     "extensions": [
       "crn"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -404,13 +237,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Alex": {
-    "complexitychecks": [],
     "extensions": [
       "x"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -420,17 +251,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Alloy": {
-    "complexitychecks": [
-      "implies ",
-      "else ",
-      "for ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "<= ",
-      ">= "
-    ],
     "extensions": [
       "als"
     ],
@@ -443,8 +263,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -454,19 +273,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Android Interface Definition Language": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "aidl"
     ],
@@ -482,12 +288,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -498,19 +298,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "AppleScript": {
-    "complexitychecks": [
-      "considering ",
-      "ignoring ",
-      "repeat ",
-      "while ",
-      "if ",
-      "else ",
-      "else if ",
-      "try ",
-      "on error ",
-      "and ",
-      "or "
-    ],
     "extensions": [
       "applescript"
     ],
@@ -523,14 +310,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ],
-    "shebangs": []
+    ]
   }
 }
 ```
@@ -540,37 +320,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Arturo": {
-    "complexitychecks": [
-      "loop ",
-      "map ",
-      "select ",
-      "if ",
-      "if? ",
-      "while ",
-      "function ",
-      "or? ",
-      "and? ",
-      "not? ",
-      "<> ",
-      "= "
-    ],
     "extensions": [
       "art"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -580,13 +336,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "AsciiDoc": {
-    "complexitychecks": [],
     "extensions": [
       "adoc"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -596,19 +350,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Assembly": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "s",
       "asm"
@@ -621,16 +362,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -641,20 +372,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Astro": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      ".map"
-    ],
     "extensions": [
       "astro"
     ],
@@ -670,16 +387,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -690,19 +397,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "AutoHotKey": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ahk"
     ],
@@ -714,8 +408,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -725,19 +418,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Autoconf": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "in"
     ],
@@ -745,8 +425,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "#",
       "dnl"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -756,15 +435,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Avro": {
-    "complexitychecks": [],
     "extensions": [
       "avdl",
       "avpr",
       "avsc"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -774,19 +451,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "BASH": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bash",
       "bash_login",
@@ -794,29 +458,10 @@ This page lists all the programming languages supported by `pylocc` and their re
       "bash_profile",
       "bashrc"
     ],
-    "filenames": [
-      ".bash_login",
-      ".bash_logout",
-      ".bash_profile",
-      ".bashrc"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "bash"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -826,33 +471,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Basic": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "elseif ",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bas"
     ],
     "line_comment": [
       "'"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -862,19 +487,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Batch": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bat",
       "btm",
@@ -884,8 +496,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "REM",
       "::"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -895,19 +506,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bazel": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bzl",
       "build.bazel",
@@ -917,13 +515,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -933,7 +525,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bean": {
-    "complexitychecks": [],
     "extensions": [
       "bean",
       "beancount"
@@ -941,13 +532,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -957,21 +542,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bicep": {
-    "complexitychecks": [
-      "@minLength(",
-      "@maxLength(",
-      "@secure(",
-      "[for ",
-      "if(",
-      "if (",
-      " == ",
-      " != ",
-      " ? ",
-      "using ",
-      "range(",
-      "type ",
-      "func "
-    ],
     "extensions": [
       "bicep"
     ],
@@ -983,12 +553,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -999,19 +563,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bitbake": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bb",
       "bbappend",
@@ -1020,13 +571,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -1036,15 +581,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bitbucket Pipeline": {
-    "complexitychecks": [],
     "extensions": [
       "bitbucket-pipelines.yml"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1054,37 +597,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Blade template": {
-    "complexitychecks": [
-      "@for ",
-      "@for(",
-      "@foreach ",
-      "@foreach(",
-      "@forelse ",
-      "@forelse(",
-      "@each ",
-      "@each (",
-      "@while ",
-      "@while(",
-      "@if ",
-      "@if(",
-      "@unless ",
-      "@unless(",
-      "@isset ",
-      "@isset(",
-      "@empty ",
-      "@empty(",
-      "@else ",
-      "@elseif ",
-      "@elseif(",
-      "@while ",
-      "@while(",
-      "@switch ",
-      "@switch (",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "blade.php"
     ],
@@ -1098,8 +610,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -1109,7 +620,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Blueprint": {
-    "complexitychecks": [],
     "extensions": [
       "blp"
     ],
@@ -1121,12 +631,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1137,20 +641,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Boo": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "elif ",
-      "unless ",
-      " and ",
-      "for ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "boo"
     ],
@@ -1162,20 +652,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      }
     ]
   }
 }
@@ -1186,38 +662,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Bosque": {
-    "complexitychecks": [
-      "if ",
-      "if(",
-      "switch ",
-      "match ",
-      "case ",
-      "| ",
-      "|| ",
-      "& ",
-      "&& ",
-      "!= ",
-      "!== ",
-      "== ",
-      "=== "
-    ],
     "extensions": [
       "bsq"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -1227,22 +678,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Brainfuck": {
-    "complexitychecks": [
-      "[",
-      "]",
-      "<",
-      ">",
-      "+",
-      "-",
-      ".",
-      ","
-    ],
     "extensions": [
       "bf"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1252,15 +692,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "BuildStream": {
-    "complexitychecks": [],
     "extensions": [
       "bst"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1270,21 +708,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "c",
       "ec",
@@ -1298,12 +721,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1314,22 +731,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C Header": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "case ",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "h"
     ],
@@ -1341,12 +742,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1357,34 +752,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C Shell": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "csh"
-    ],
-    "filenames": [
-      ".cshrc"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [],
-    "shebangs": [
-      "csh",
-      "tcsh"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -1394,21 +768,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C#": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "foreach ",
-      "foreach(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cs",
       "csx"
@@ -1421,20 +780,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "ignoreEscape": true,
-        "start": "@\""
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ],
-    "shebangs": [
-      "dotnet"
     ]
   }
 }
@@ -1445,21 +790,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C++": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cc",
       "cpp",
@@ -1481,12 +811,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1497,21 +821,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C++ Header": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "hh",
       "hpp",
@@ -1528,12 +837,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1544,26 +847,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "C3": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "foreach ",
-      "foreach(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "case ",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "defer ",
-      "macro "
-    ],
     "extensions": [
       "c3"
     ],
@@ -1579,17 +862,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<*",
         "*>"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "ignoreEscape": true,
-        "start": "`"
-      }
     ]
   }
 }
@@ -1600,24 +872,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CMake": {
-    "complexitychecks": [
-      "foreach ",
-      "foreach(",
-      "if ",
-      "if(",
-      "elseif ",
-      "elseif(",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "OR ",
-      "AND ",
-      "EQUAL ",
-      "STREQUAL ",
-      "VERSION_EQUAL ",
-      "PATH_EQUAL "
-    ],
     "extensions": [
       "cmake",
       "cmakelists.txt"
@@ -1630,12 +884,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#[[",
         "]]"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1646,19 +894,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "COBOL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cob",
       "cbl",
@@ -1669,8 +904,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "*"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1680,19 +914,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CSS": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "css"
     ],
@@ -1704,12 +925,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1720,13 +935,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CSV": {
-    "complexitychecks": [],
     "extensions": [
       "csv"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1736,19 +949,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cabal": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cabal"
     ],
@@ -1760,8 +960,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -1771,31 +970,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cairo": {
-    "complexitychecks": [
-      "loop ",
-      "if ",
-      "if(",
-      "match ",
-      "match(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cairo"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -1805,18 +986,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cangjie": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cj"
     ],
@@ -1828,24 +997,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      }
     ]
   }
 }
@@ -1856,15 +1007,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cap'n Proto": {
-    "complexitychecks": [],
     "extensions": [
       "capnp"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -1874,19 +1023,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cassius": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cassius"
     ],
@@ -1898,12 +1034,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1914,19 +1044,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ceylon": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ceylon"
     ],
@@ -1938,12 +1055,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -1954,18 +1065,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Chapel": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "switch ",
-      "while ",
-      "else ",
-      "do ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "chpl"
     ],
@@ -1977,16 +1076,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -1997,21 +1086,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Circom": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "circom"
     ],
@@ -2023,8 +1097,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -2034,30 +1107,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Clipper": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "do while ",
-      "while ",
-      "else ",
-      "elseif ",
-      "else(",
-      "switch ",
-      "case ",
-      "otherwise ",
-      "begin sequence ",
-      "end sequence ",
-      "begin sequence(",
-      "try ",
-      "catch ",
-      "finally ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "prg",
       "ch"
@@ -2071,16 +1120,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -2091,21 +1130,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Clojure": {
-    "complexitychecks": [
-      "(for ",
-      "(when ",
-      "(loop ",
-      "(doseq ",
-      "(cond ",
-      "(if",
-      "(if-not ",
-      "(and ",
-      "(or ",
-      "(not ",
-      "(= ",
-      "(not= ",
-      "(recur "
-    ],
     "extensions": [
       "clj",
       "cljc"
@@ -2113,8 +1137,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2124,27 +1147,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ClojureScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cljs"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2154,23 +1163,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Closure Template": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      ">= ",
-      "<= ",
-      "?: ",
-      "? : "
-    ],
     "extensions": [
       "soy"
     ],
@@ -2186,12 +1178,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2202,65 +1188,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CloudFormation (JSON)": {
-    "complexitychecks": [
-      "!GetAtt",
-      "!Sub",
-      "!Select",
-      "!Equals",
-      "!If",
-      "DependsOn:",
-      "!Select",
-      "!Equals",
-      "!If",
-      "Fn::If",
-      "Fn::And",
-      "Fn::Equals",
-      "Fn::Not",
-      "Fn::Or",
-      "Fn::Base64",
-      "Fn::Cidr",
-      "Fn::FindInMap",
-      "Fn::GetAtt",
-      "Fn::GetAZs",
-      "Fn::ImportValue",
-      "Fn::Join",
-      "Fn::Select",
-      "Fn::Split",
-      "Fn::Sub",
-      "Fn::Transform"
-    ],
     "extensions": [
       "json"
     ],
-    "keywords": [
-      "\"AWSTemplateFormatVersion\"",
-      "AWS::",
-      "!GetAtt",
-      "!Sub",
-      "\"DependsOn\"",
-      "!Select",
-      "!Equals",
-      "!If",
-      "Fn::If",
-      "Fn::And",
-      "Fn::Equals",
-      "Fn::Not",
-      "Fn::Or",
-      "Fn::Base64",
-      "Fn::Cidr",
-      "Fn::FindInMap",
-      "Fn::GetAtt",
-      "Fn::GetAZs",
-      "Fn::ImportValue",
-      "Fn::Join",
-      "Fn::Select",
-      "Fn::Split",
-      "Fn::Sub",
-      "Fn::Transform"
-    ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2270,75 +1202,14 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CloudFormation (YAML)": {
-    "complexitychecks": [
-      "!GetAtt",
-      "!Sub",
-      "!Select",
-      "!Equals",
-      "!If",
-      "DependsOn:",
-      "!Select",
-      "!Equals",
-      "!If",
-      "Fn::If",
-      "Fn::And",
-      "Fn::Equals",
-      "Fn::Not",
-      "Fn::Or",
-      "Fn::Base64",
-      "Fn::Cidr",
-      "Fn::FindInMap",
-      "Fn::GetAtt",
-      "Fn::GetAZs",
-      "Fn::ImportValue",
-      "Fn::Join",
-      "Fn::Select",
-      "Fn::Split",
-      "Fn::Sub",
-      "Fn::Transform"
-    ],
     "extensions": [
       "yaml",
       "yml"
     ],
-    "keywords": [
-      "Resources:",
-      "AWSTemplateFormatVersion:",
-      "Description:",
-      "AWS::",
-      "Properties:",
-      "Name:",
-      "Type:",
-      "!GetAtt",
-      "!Sub",
-      "Statement:",
-      "Ref:",
-      "DependsOn:",
-      "!Select",
-      "!Equals",
-      "!If",
-      "Fn::If",
-      "Fn::And",
-      "Fn::Equals",
-      "Fn::Not",
-      "Fn::Or",
-      "Fn::Base64",
-      "Fn::Cidr",
-      "Fn::FindInMap",
-      "Fn::GetAtt",
-      "Fn::GetAZs",
-      "Fn::ImportValue",
-      "Fn::Join",
-      "Fn::Select",
-      "Fn::Split",
-      "Fn::Sub",
-      "Fn::Transform"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2348,28 +1219,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CodeQL": {
-    "complexitychecks": [
-      "and ",
-      "or ",
-      "implies ",
-      "if ",
-      "else ",
-      "not ",
-      "instanceof ",
-      "in ",
-      "exists(",
-      "forall( ",
-      "avg(",
-      "concat(",
-      "count(",
-      "max(",
-      "min(",
-      "rank(",
-      "strictconcat(",
-      "strictcount(",
-      "strictsum(",
-      "sum("
-    ],
     "extensions": [
       "ql",
       "qll"
@@ -2382,12 +1231,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2398,19 +1241,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "CoffeeScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "coffee"
     ],
@@ -2422,16 +1252,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "###",
         "###"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -2442,27 +1262,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cogent": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cogent"
     ],
     "line_comment": [
       "--"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2472,19 +1278,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ColdFusion": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cfm"
     ],
@@ -2494,16 +1287,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!---",
         "--->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -2514,19 +1297,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ColdFusion CFScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cfc"
     ],
@@ -2538,12 +1308,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2554,40 +1318,8 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Coq": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "v"
-    ],
-    "keywords": [
-      "Require",
-      "Hypothesis",
-      "Inductive",
-      "Remark",
-      "Lemma",
-      "Proof",
-      "Definition",
-      "Theorem",
-      "Class",
-      "Instance",
-      "Module",
-      "Context",
-      "Section",
-      "Notation",
-      "End",
-      "Fixpoint",
-      "From Coq"
     ],
     "line_comment": [],
     "multi_line": [
@@ -2595,12 +1327,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2611,13 +1337,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Creole": {
-    "complexitychecks": [],
     "extensions": [
       "creole"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -2627,36 +1351,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Crystal": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cr"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -2666,19 +1367,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cuda": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cu"
     ],
@@ -2690,12 +1378,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2706,19 +1388,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Cython": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "in "
-    ],
     "extensions": [
       "pyx",
       "pxi",
@@ -2727,25 +1396,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -2755,19 +1406,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "D": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "d"
     ],
@@ -2783,20 +1421,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/+",
         "+/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "rdmd"
     ]
   }
 }
@@ -2807,18 +1431,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "DAML": {
-    "complexitychecks": [
-      "if ",
-      "then ",
-      "else ",
-      "|| ",
-      "&& ",
-      "/= ",
-      "== ",
-      "case ",
-      "do {",
-      "forall "
-    ],
     "extensions": [
       "daml"
     ],
@@ -2830,8 +1442,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -2841,23 +1452,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "DM": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "||",
-      "&&",
-      "!=",
-      "<>",
-      "==",
-      "in "
-    ],
     "extensions": [
       "dm"
     ],
@@ -2869,17 +1463,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -2890,7 +1473,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "DOT": {
-    "complexitychecks": [],
     "extensions": [
       "dot",
       "gv"
@@ -2904,8 +1486,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -2915,19 +1496,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Dart": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "dart"
     ],
@@ -2939,12 +1507,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2955,19 +1517,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Device Tree": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "dts",
       "dtsi"
@@ -2980,12 +1529,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -2996,7 +1539,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Dhall": {
-    "complexitychecks": [],
     "extensions": [
       "dhall"
     ],
@@ -3008,12 +1550,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3024,17 +1560,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Docker ignore": {
-    "complexitychecks": [],
     "extensions": [],
-    "filenames": [
-      ".dockerignore"
-    ],
     "line_comment": [
       "#",
       "//"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3044,39 +1575,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Dockerfile": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
-      "dockerfile"
-    ],
-    "filenames": [
       "dockerfile"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3086,13 +1591,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Document Type Definition": {
-    "complexitychecks": [],
     "extensions": [
       "dtd"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3102,25 +1605,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Elixir": {
-    "complexitychecks": [
-      "case ",
-      "cond ",
-      "if ",
-      "for ",
-      "with ",
-      "try ",
-      "catch ",
-      "rescue ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "|> "
-    ],
     "extensions": [
       "ex",
       "exs"
@@ -3128,25 +1612,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3156,26 +1622,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Elixir Template": {
-    "complexitychecks": [
-      "case ",
-      "cond ",
-      "if ",
-      "for ",
-      "with ",
-      "try ",
-      "catch ",
-      "rescue ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "|> ",
-      "<% "
-    ],
     "extensions": [
       "eex"
     ],
@@ -3187,24 +1633,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -3215,19 +1643,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Elm": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "case ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "elm"
     ],
@@ -3239,12 +1654,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3255,27 +1664,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Emacs Dev Env": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ede"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3285,27 +1680,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Emacs Lisp": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "el"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3315,31 +1696,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "EmiT": {
-    "complexitychecks": [
-      "if ",
-      "if(",
-      "warp ",
-      "time ",
-      "kills ",
-      "collapse ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "emit"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3349,19 +1712,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Erlang": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "erl",
       "hrl"
@@ -3369,11 +1719,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "%"
     ],
-    "multi_line": [],
-    "quotes": [],
-    "shebangs": [
-      "escript"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3383,36 +1729,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Expect": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "exp"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3422,14 +1745,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Extensible Stylesheet Language Transformations": {
-    "complexitychecks": [],
     "extensions": [
       "xslt",
       "xsl"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3439,19 +1760,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "F#": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "match ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "fs",
       "fsi",
@@ -3466,8 +1774,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -3477,19 +1784,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "F*": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "fst"
     ],
@@ -3499,12 +1793,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3515,19 +1803,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "FIDL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "fidl"
     ],
@@ -3539,12 +1814,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3555,19 +1824,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "FORTRAN Legacy": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "f",
       "for",
@@ -3581,17 +1837,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "!",
       "*"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3601,18 +1847,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "FSL": {
-    "complexitychecks": [
-      "->",
-      "<-"
-    ],
     "extensions": [
       "fsl"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -3631,12 +1872,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3647,47 +1882,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Factor": {
-    "complexitychecks": [
-      "if",
-      "when",
-      "unless",
-      "if*",
-      "when*",
-      "unless*",
-      "?if",
-      "?",
-      "cond",
-      "case",
-      "cond>quot",
-      "case>quot",
-      "alist>quot",
-      "while",
-      "until",
-      "loop",
-      "0&&",
-      "1&&",
-      "2&&",
-      "3&&",
-      "n&&",
-      "&&",
-      "0||",
-      "1||",
-      "2||",
-      "3||",
-      "n||",
-      "||",
-      "and",
-      "or",
-      "xor",
-      "eq",
-      "=",
-      "smart-if",
-      "smart-if*",
-      "smart-when",
-      "smart-when*",
-      "smart-unless",
-      "smart-unless*"
-    ],
     "extensions": [
       "factor"
     ],
@@ -3731,44 +1925,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "((",
         "))"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": ";",
-        "start": "STRING:"
-      },
-      {
-        "end": "]======]",
-        "start": "[======["
-      },
-      {
-        "end": "]====]",
-        "start": "[=====["
-      },
-      {
-        "end": "]====]",
-        "start": "[====["
-      },
-      {
-        "end": "]===]",
-        "start": "[===["
-      },
-      {
-        "end": "]==]",
-        "start": "[==["
-      },
-      {
-        "end": "]=]",
-        "start": "[=["
-      },
-      {
-        "end": "]]",
-        "start": "[["
-      }
     ]
   }
 }
@@ -3779,36 +1935,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Fennel": {
-    "complexitychecks": [
-      "(for",
-      "(each",
-      "(if",
-      "(when",
-      "(while",
-      "(switch",
-      "(do",
-      "(..",
-      "(=",
-      "(and",
-      "(or"
-    ],
     "extensions": [
       "fnl"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": ","
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3818,39 +1951,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Fish": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "fish"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "fish"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3860,23 +1967,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Flow9": {
-    "complexitychecks": [
-      "if ",
-      "if(",
-      "else ",
-      "else{",
-      "fori ",
-      "fori(",
-      "switch ",
-      "switch(",
-      "fold ",
-      "fold(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "|> "
-    ],
     "extensions": [
       "flow"
     ],
@@ -3888,12 +1978,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -3904,19 +1988,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Forth": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "4th",
       "forth",
@@ -3938,8 +2009,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "( ",
         ")"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -3949,19 +2019,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Fortran Modern": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "f03",
       "f08",
@@ -3971,13 +2028,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "!"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -3987,19 +2038,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Fragment Shader File": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "fsh"
     ],
@@ -4011,12 +2049,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4027,20 +2059,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Freemarker Template": {
-    "complexitychecks": [
-      "<#list ",
-      "<#assign ",
-      "<#if ",
-      "<#elseif ",
-      "<#else>",
-      "<#else> ",
-      "<#switch  ",
-      "<#case ",
-      "<#default>",
-      "<#default> ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ftl"
     ],
@@ -4050,8 +2068,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<#--",
         "-->"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -4061,27 +2078,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Futhark": {
-    "complexitychecks": [
-      "if ",
-      "else ",
-      "then ",
-      "for ",
-      "loop ",
-      "while ",
-      "|| ",
-      "&& ",
-      "!= ",
-      ">= ",
-      "<= "
-    ],
     "extensions": [
       "fut"
     ],
     "line_comment": [
       "--"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4091,40 +2094,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "GDScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "gd"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4134,19 +2110,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "GLSL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vert",
       "tesc",
@@ -4164,12 +2127,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4180,18 +2137,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "GN": {
-    "complexitychecks": [
-      "if(",
-      "if (",
-      "else if(",
-      "else if (",
-      "else(",
-      "else (",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "gn",
       "gni"
@@ -4199,13 +2144,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4215,23 +2154,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Game Maker Language": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "repeat ",
-      "repeat(",
-      "|| ",
-      "or ",
-      "&& ",
-      "and ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "gml"
     ],
@@ -4244,12 +2166,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4260,13 +2176,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Game Maker Project": {
-    "complexitychecks": [],
     "extensions": [
       "yyp"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4276,25 +2190,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Gemfile": {
-    "complexitychecks": [],
     "extensions": [],
-    "filenames": [
-      "gemfile"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4304,20 +2204,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Gherkin Specification": {
-    "complexitychecks": [
-      "given",
-      "when",
-      "then",
-      "and"
-    ],
     "extensions": [
       "feature"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4327,12 +2220,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Gleam": {
-    "complexitychecks": [
-      "fn ",
-      "case ",
-      "-> ",
-      "if "
-    ],
     "extensions": [
       "gleam"
     ],
@@ -4341,13 +2228,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "///",
       "////"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4357,20 +2238,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Go": {
-    "complexitychecks": [
-      "go ",
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "select ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "go"
     ],
@@ -4382,17 +2249,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "ignoreEscape": true,
-        "start": "`"
-      }
     ]
   }
 }
@@ -4403,16 +2259,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Go Template": {
-    "complexitychecks": [
-      "{{if ",
-      "{{ if ",
-      "{{else",
-      "{{ else",
-      "{{range ",
-      "{{ range ",
-      "{{with",
-      "{{ with"
-    ],
     "extensions": [
       "tmpl",
       "gohtml",
@@ -4424,8 +2270,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{{/*",
         "*/}}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -4435,21 +2280,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Go+": {
-    "complexitychecks": [
-      "go ",
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "select ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "?:"
-    ],
     "extensions": [
       "gop"
     ],
@@ -4462,20 +2292,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "ignoreEscape": true,
-        "start": "`"
-      }
-    ],
-    "shebangs": [
-      "gop"
     ]
   }
 }
@@ -4486,13 +2302,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Godot Scene": {
-    "complexitychecks": [],
     "extensions": [
       "tscn"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4502,24 +2316,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Gradle": {
-    "complexitychecks": [],
     "extensions": [
       "gradle"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4529,19 +2332,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "GraphQL": {
-    "complexitychecks": [
-      "type ",
-      "input ",
-      "query ",
-      "mutation ",
-      "subscription ",
-      "directive ",
-      "scalar ",
-      "enum ",
-      "interface ",
-      "union ",
-      "fragment "
-    ],
     "extensions": [
       "graphql"
     ],
@@ -4553,17 +2343,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "\"\"\"",
         "\"\"\""
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      }
     ]
   }
 }
@@ -4574,19 +2353,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Groovy": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "groovy",
       "grt",
@@ -4601,12 +2367,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4617,28 +2377,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Gwion": {
-    "complexitychecks": [
-      "fun ",
-      "while(",
-      "while (",
-      "repeat(",
-      "repeat (",
-      "if (",
-      "if("
-    ],
     "extensions": [
       "gw"
     ],
     "line_comment": [
       "#!"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -4654,8 +2399,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "-#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4665,18 +2409,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "HCL": {
-    "complexitychecks": [
-      "for_each ",
-      "for ",
-      "count ",
-      "coalesce(",
-      "== ",
-      "!= ",
-      "> ",
-      "< ",
-      "&& ",
-      "|| "
-    ],
     "extensions": [
       "hcl"
     ],
@@ -4688,12 +2420,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4704,25 +2430,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "HEEx": {
-    "complexitychecks": [
-      "case ",
-      "cond ",
-      "if ",
-      "for ",
-      "with ",
-      "try ",
-      "catch ",
-      "rescue ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "!= ",
-      "== ",
-      "|| ",
-      "&& ",
-      "|> "
-    ],
     "extensions": [
       "heex"
     ],
@@ -4732,12 +2439,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<%!--",
         "--%>"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4748,13 +2449,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "HEX": {
-    "complexitychecks": [],
     "extensions": [
       "hex"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4774,12 +2473,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4790,19 +2483,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Hamlet": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "hamlet"
     ],
@@ -4812,12 +2492,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -4828,19 +2502,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Handlebars": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "hbs",
       "handlebars"
@@ -4855,16 +2516,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{{!",
         "}}"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -4875,14 +2526,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Happy": {
-    "complexitychecks": [],
     "extensions": [
       "y",
       "ly"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -4892,32 +2541,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Hare": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "else ",
-      "match ",
-      "switch ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ha"
     ],
     "line_comment": [
       "//"
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
     ]
   }
 }
@@ -4928,18 +2556,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Haskell": {
-    "complexitychecks": [
-      "if ",
-      "then ",
-      "else ",
-      "|| ",
-      "&& ",
-      "/= ",
-      "== ",
-      "case ",
-      "do {",
-      "forall "
-    ],
     "extensions": [
       "hs"
     ],
@@ -4951,8 +2567,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -4962,19 +2577,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Haxe": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "hx"
     ],
@@ -4986,12 +2588,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5002,19 +2598,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "IDL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "idl",
       "webidl",
@@ -5028,12 +2611,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5051,8 +2628,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "#",
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5062,19 +2638,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Idris": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "idr",
       "lidr"
@@ -5087,17 +2650,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      }
     ]
   }
 }
@@ -5108,13 +2660,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Intel HEX": {
-    "complexitychecks": [],
     "extensions": [
       "ihex"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5124,19 +2674,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Isabelle": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "thy"
     ],
@@ -5160,12 +2697,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "\\\\<open>",
         "\\\\<close>"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "''",
-        "start": "''"
-      }
     ]
   }
 }
@@ -5176,19 +2707,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JAI": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "jai"
     ],
@@ -5200,13 +2718,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5217,31 +2728,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JCL": {
-    "complexitychecks": [
-      " IF",
-      " THEN",
-      " ELSE",
-      " PROC=",
-      " PGM=",
-      " DD ",
-      " EXEC ",
-      " JOB ",
-      " COND=",
-      " INCLUDE",
-      " PEND"
-    ],
     "extensions": [
       "jcl",
       "jcls"
     ],
     "line_comment": [
       "//*"
-    ],
-    "quotes": [
-      {
-        "start": "'",
-        "end": "'"
-      }
     ]
   }
 }
@@ -5252,13 +2744,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JSON": {
-    "complexitychecks": [],
     "extensions": [
       "json"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5268,15 +2758,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JSON5": {
-    "complexitychecks": [],
     "extensions": [
       "json5"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5286,7 +2774,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JSONC": {
-    "complexitychecks": [],
     "extensions": [
       "jsonc"
     ],
@@ -5298,12 +2785,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5314,13 +2795,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JSONL": {
-    "complexitychecks": [],
     "extensions": [
       "jsonl"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5330,19 +2809,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JSX": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "jsx"
     ],
@@ -5354,12 +2820,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5370,19 +2830,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Jade": {
-    "complexitychecks": [
-      "if ",
-      "else if ",
-      "unless "
-    ],
     "extensions": [
       "jade"
     ],
     "line_comment": [
       "//-"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5392,39 +2846,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Janet": {
-    "complexitychecks": [
-      "(if ",
-      "(for ",
-      "(for ",
-      "(cond ",
-      "(switch ",
-      "(when ",
-      "(while ",
-      "(loop ",
-      "(case "
-    ],
     "extensions": [
       "janet"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "nestedmultiline": false,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "``",
-        "start": "``"
-      },
-      {
-        "end": "\"",
-        "start": "@\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -5434,19 +2862,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Java": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "java"
     ],
@@ -5458,12 +2873,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5474,22 +2883,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JavaScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "?.",
-      "?? ",
-      "??= "
-    ],
     "extensions": [
       "js",
       "cjs",
@@ -5503,23 +2896,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
-    ],
-    "shebangs": [
-      "node"
     ]
   }
 }
@@ -5530,19 +2906,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "JavaServer Pages": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "jsp"
     ],
@@ -5554,16 +2917,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -5574,13 +2927,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Jenkins Buildfile": {
-    "complexitychecks": [],
     "extensions": [
       "jenkinsfile"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5590,26 +2941,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Jinja": {
-    "complexitychecks": [
-      "{% for ",
-      "{%- for ",
-      "{% if ",
-      "{%- if ",
-      "{% else ",
-      "{%- else ",
-      "{% elif ",
-      "{% macro ",
-      "{%- macro ",
-      "{% call ",
-      "{%- call ",
-      "{% filter ",
-      "{%- filter ",
-      "{% set ",
-      "{% include ",
-      "{% from ",
-      "{% extends ",
-      "{% with "
-    ],
     "extensions": [
       "jinja",
       "j2",
@@ -5621,8 +2952,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{#",
         "#}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -5632,15 +2962,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Jsonnet": {
-    "complexitychecks": [
-      "for",
-      "if",
-      "else",
-      "||",
-      "&&",
-      "!=",
-      "=="
-    ],
     "extensions": [
       "jsonnet",
       "libsonnet"
@@ -5654,31 +2975,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "|||",
-        "start": "|||"
-      },
-      {
-        "end": "\"",
-        "start": "@\""
-      },
-      {
-        "end": "'",
-        "start": "@'"
-      }
-    ],
-    "shebangs": [
-      "jsonnet"
     ]
   }
 }
@@ -5689,21 +2985,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Julia": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "while ",
-      "else ",
-      "elseif ",
-      "elseif(",
-      "try ",
-      "catch ",
-      "finally ",
-      "|| ",
-      "&& "
-    ],
     "extensions": [
       "jl"
     ],
@@ -5715,17 +2996,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#=",
         "=#"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      }
     ]
   }
 }
@@ -5736,19 +3006,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Julius": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "julius"
     ],
@@ -5760,12 +3017,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5776,14 +3027,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Jupyter": {
-    "complexitychecks": [],
     "extensions": [
       "ipynb",
       "jpynb"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -5793,32 +3042,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Just": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "justfile"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -5828,29 +3058,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "K": {
-    "complexitychecks": [
-      "'",
-      "/",
-      "\\",
-      "':",
-      "/:",
-      "\\:",
-      "|",
-      "&",
-      "!",
-      "="
-    ],
     "extensions": [
       "k"
     ],
     "line_comment": [
       "/"
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5861,42 +3073,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Korn Shell": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ksh"
-    ],
-    "filenames": [
-      ".kshrc"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "ksh"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -5906,19 +3089,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Kotlin": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "kt",
       "kts"
@@ -5931,13 +3101,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -5948,26 +3111,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Koto": {
-    "complexitychecks": [
-      "for ",
-      "while ",
-      "until ",
-      "continue ",
-      "break ",
-      "loop ",
-      "if ",
-      "switch ",
-      "match ",
-      "then",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "and ",
-      "or ",
-      "not "
-    ],
     "extensions": [
       "koto"
     ],
@@ -5979,17 +3122,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#-",
         "-#"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -6000,20 +3132,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LALRPOP": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "match "
-    ],
     "extensions": [
       "lalrpop"
     ],
@@ -6025,29 +3143,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "#\\\"",
-        "start": "\\\"#"
-      },
-      {
-        "end": "r##\\\"",
-        "start": "\\\"##"
-      },
-      {
-        "end": "r#\\\"",
-        "start": "\\\"#"
-      }
     ]
   }
 }
@@ -6058,19 +3153,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LD Script": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "lds"
     ],
@@ -6082,12 +3164,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6098,7 +3174,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LESS": {
-    "complexitychecks": [],
     "extensions": [
       "less"
     ],
@@ -6110,12 +3185,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6126,7 +3195,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LEX": {
-    "complexitychecks": [],
     "extensions": [
       "l"
     ],
@@ -6136,8 +3204,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -6147,38 +3214,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LLVM IR": {
-    "complexitychecks": [
-      "llvm.loop",
-      "br ",
-      "switch ",
-      "indirectbr ",
-      "invoke ",
-      "callbr ",
-      "resume ",
-      "catchswitch ",
-      "catchret ",
-      "cleanupret ",
-      "shl ",
-      "lshr ",
-      "ashr ",
-      "and ",
-      "or ",
-      "xor "
-    ],
     "extensions": [
       "ll"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ],
-    "shebangs": []
+    "multi_line": []
   }
 }
 ```
@@ -6188,16 +3230,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LOLCODE": {
-    "complexitychecks": [
-      "AWSUM THX ",
-      "O NOES ",
-      "PLZ OPEN FILE ",
-      "IM IN YR ",
-      "O RLY?",
-      "O RLY? ",
-      "WTF?",
-      "WTF? "
-    ],
     "extensions": [
       "lol",
       "lols"
@@ -6210,12 +3242,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "OBTW",
         "TLDR"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6226,15 +3252,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LaTeX": {
-    "complexitychecks": [],
     "extensions": [
       "tex"
     ],
     "line_comment": [
       "%"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -6244,19 +3268,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Lean": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "lean",
       "hlean"
@@ -6269,9 +3280,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/-",
         "-/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": []
+    ]
   }
 }
 ```
@@ -6281,24 +3290,9 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "License": {
-    "complexitychecks": [],
     "extensions": [],
-    "filenames": [
-      "license",
-      "licence",
-      "copying",
-      "copying3",
-      "unlicense",
-      "unlicence",
-      "license-apache",
-      "licence-apache",
-      "license-mit",
-      "licence-mit",
-      "copyright"
-    ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -6308,19 +3302,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Lisp": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "lisp",
       "lsp"
@@ -6333,11 +3314,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#|",
         "|#"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [],
-    "shebangs": [
-      "sbcl"
     ]
   }
 }
@@ -6348,30 +3324,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "LiveScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "case ",
-      "while ",
-      "when ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "!== ",
-      "xor ",
-      "and ",
-      "or ",
-      "|> ",
-      "<< ",
-      "<<< ",
-      "<<<< ",
-      ">> ",
-      "== "
-    ],
     "extensions": [
       "ls"
     ],
@@ -6383,16 +3335,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -6403,24 +3345,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Lua": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "elseif ",
-      "elseif(",
-      "until ",
-      "until(",
-      "or ",
-      "and ",
-      "~= ",
-      "== "
-    ],
     "extensions": [
       "lua"
     ],
@@ -6452,24 +3376,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "--[=====[",
         "]=====]"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "[[",
-        "start": "]]",
-        "ignoreEscape": true
-      }
-    ],
-    "shebangs": [
-      "lua"
     ]
   }
 }
@@ -6480,24 +3386,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Luau": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "elseif ",
-      "elseif(",
-      "until ",
-      "until(",
-      "or ",
-      "and ",
-      "~= ",
-      "== "
-    ],
     "extensions": [
       "luau"
     ],
@@ -6529,28 +3417,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "--[=====[",
         "]=====]"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "`",
-        "start": "`"
-      },
-      {
-        "end": "[[",
-        "start": "]]",
-        "ignoreEscape": true
-      }
-    ],
-    "shebangs": [
-      "luau"
     ]
   }
 }
@@ -6561,19 +3427,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Lucius": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "lucius"
     ],
@@ -6585,12 +3438,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6601,24 +3448,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Luna": {
-    "complexitychecks": [],
     "extensions": [
       "luna"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -6628,43 +3464,8 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MATLAB": {
-    "complexitychecks": [
-      "if ",
-      "elseif ",
-      "case ",
-      "otherwise ",
-      "try",
-      "for ",
-      "while "
-    ],
     "extensions": [
       "m"
-    ],
-    "keywords": [
-      "eye(",
-      "zeros(",
-      "ones(",
-      "transpose(",
-      "meshgrid(",
-      "mod(",
-      "classdef",
-      "function",
-      "disp(",
-      "sin(",
-      "tan(",
-      "cos(",
-      "plot",
-      "sqrt(",
-      "deblank(",
-      "findstr(",
-      "strrep(",
-      "strcmp(",
-      "display(",
-      "strcat(",
-      "iscellstr(",
-      "strfind(",
-      "%",
-      "fprintf("
     ],
     "line_comment": [
       "%"
@@ -6674,12 +3475,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "%{",
         "}%"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -6690,13 +3485,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MDX": {
-    "complexitychecks": [],
     "extensions": [
       "mdx"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -6706,19 +3499,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MQL Header": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mqh"
     ],
@@ -6730,12 +3510,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6746,19 +3520,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MQL4": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mq4"
     ],
@@ -6770,12 +3531,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6786,19 +3541,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MQL5": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mq5"
     ],
@@ -6810,12 +3552,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6826,9 +3562,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MSBuild": {
-    "complexitychecks": [
-      "Condition"
-    ],
     "extensions": [
       "csproj",
       "vbproj",
@@ -6851,12 +3584,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -6867,32 +3594,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "MUMPS": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mps"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -6902,13 +3610,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Macromedia eXtensible Markup Language": {
-    "complexitychecks": [],
     "extensions": [
       "mxml"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -6918,19 +3624,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Madlang": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mad"
     ],
@@ -6942,8 +3635,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{#",
         "#}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -6953,34 +3645,16 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Makefile": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "makefile",
       "mak",
       "mk",
       "bp"
     ],
-    "filenames": [
-      "makefile",
-      "gnumakefile"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -6990,19 +3664,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Mako": {
-    "complexitychecks": [
-      "% for ",
-      "% if ",
-      "% else ",
-      "% elif ",
-      "<% include ",
-      "<%def ",
-      "<%page ",
-      "<%def ",
-      "<%block ",
-      "<%namespace ",
-      "<%inherit "
-    ],
     "extensions": [
       "mako",
       "mao"
@@ -7015,8 +3676,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<%doc>",
         "</%doc>"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -7026,14 +3686,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Markdown": {
-    "complexitychecks": [],
     "extensions": [
       "md",
       "markdown"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -7043,13 +3701,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Max": {
-    "complexitychecks": [],
     "extensions": [
       "maxpat"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -7059,31 +3715,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Meson": {
-    "complexitychecks": [
-      "foreach ",
-      "if ",
-      "elif ",
-      "unless ",
-      "and ",
-      "or ",
-      "else "
-    ],
     "extensions": [
       "meson.build",
       "meson_options.txt"
     ],
     "line_comment": [
       "#"
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      }
     ]
   }
 }
@@ -7094,21 +3731,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Metal": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "metal"
     ],
@@ -7120,12 +3742,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7136,19 +3752,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Modula3": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "m3",
       "mg",
@@ -7163,12 +3766,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7179,27 +3776,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Module-Definition": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "def"
     ],
     "line_comment": [
       ";"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -7209,19 +3792,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Monkey C": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mc"
     ],
@@ -7233,12 +3803,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7249,33 +3813,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Moonbit": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "switch ",
-      "while ",
-      "else ",
-      "loop ",
-      "guard ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "match "
-    ],
     "extensions": [
       "mbt"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -7285,19 +3829,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Mustache": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mustache"
     ],
@@ -7307,16 +3838,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{{!",
         "}}"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -7327,32 +3848,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Nial": {
-    "complexitychecks": [
-      "case ",
-      "for ",
-      "if ",
-      "repeat ",
-      "while ",
-      "or ",
-      "and ",
-      "= ",
-      "equal ",
-      "~= ",
-      "unequal "
-    ],
     "extensions": [
       "ndf"
     ],
     "line_comment": [
       "%"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -7362,36 +3864,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Nim": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "nim"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -7401,19 +3880,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Nix": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "nix"
     ],
@@ -7425,12 +3891,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7441,36 +3901,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Nushell": {
-    "complexitychecks": [
-      "for ",
-      "do { ",
-      "each {",
-      "if ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "nu"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "nu"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -7480,19 +3917,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "OCaml": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ml",
       "mli"
@@ -7503,12 +3927,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7519,38 +3937,8 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Objective C": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "m"
-    ],
-    "keywords": [
-      "#include",
-      "printf",
-      "stdio.h",
-      ".h",
-      "@import",
-      "@interface",
-      "@property",
-      "@implementation",
-      "NSArray",
-      "#pragma",
-      "static",
-      "const",
-      "atomic",
-      "@end",
-      "//"
     ],
     "line_comment": [
       "//"
@@ -7560,12 +3948,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7576,19 +3958,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Objective C++": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "mm"
     ],
@@ -7600,12 +3969,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7616,20 +3979,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Odin": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "when ",
-      "switch ",
-      "defer ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "odin"
     ],
@@ -7641,12 +3990,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7657,19 +4000,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Opalang": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "opa"
     ],
@@ -7681,12 +4011,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7697,21 +4021,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "OpenQASM": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "qasm"
     ],
@@ -7723,12 +4032,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7739,22 +4042,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "OpenTofu": {
-    "complexitychecks": [
-      "count",
-      "for",
-      "for_each",
-      "if",
-      ": ",
-      "? ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "> ",
-      ">= ",
-      "< ",
-      "<= ",
-      "== "
-    ],
     "extensions": [
       "tofu"
     ],
@@ -7767,8 +4054,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -7778,27 +4064,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Org": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "org"
     ],
     "line_comment": [
       "# "
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -7808,19 +4080,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Oz": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "oz"
     ],
@@ -7832,12 +4091,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -7848,19 +4101,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PHP": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "php"
     ],
@@ -7873,20 +4113,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "php",
-      "php5"
     ]
   }
 }
@@ -7897,13 +4123,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PKGBUILD": {
-    "complexitychecks": [],
     "extensions": [
       "pkgbuild"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -7913,25 +4137,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PL/SQL": {
-    "complexitychecks": [
-      "and ",
-      "and(",
-      "else ",
-      "else(",
-      "elseif ",
-      "elseif(",
-      "if ",
-      "if(",
-      "loop ",
-      "not ",
-      "not(",
-      "or ",
-      "or(",
-      "<> ",
-      "<>(",
-      "= ",
-      "=("
-    ],
     "extensions": [
       "fnc",
       "pkb",
@@ -7948,12 +4153,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -7964,51 +4163,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PRQL": {
-    "complexitychecks": [
-      "case ",
-      "&& ",
-      "|| ",
-      "!= ",
-      "== ",
-      "~= "
-    ],
     "extensions": [
       "prql"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "r\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "r'''"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -8018,19 +4179,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PSL Assertion": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "psl"
     ],
@@ -8042,12 +4190,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8058,23 +4200,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Pascal": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "AND ",
-      "OR ",
-      "IF ",
-      "ELSE "
-    ],
     "extensions": [
       "pas"
     ],
@@ -8090,12 +4215,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -8106,13 +4225,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Patch": {
-    "complexitychecks": [],
     "extensions": [
       "patch"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -8122,37 +4239,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Perl": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "foreach ",
-      "foreach(",
-      "if ",
-      "if(",
-      "elsif ",
-      "elsif(",
-      "while ",
-      "while(",
-      "until ",
-      "until(",
-      "unless ",
-      "unless(",
-      "given ",
-      "given(",
-      "when ",
-      "when(",
-      "catch ",
-      "catch(",
-      "eq ",
-      "ne ",
-      "else ",
-      "and ",
-      "or ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "pl",
       "plx",
@@ -8166,20 +4252,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "=pod",
         "=cut"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "perl",
-      "perl5"
     ]
   }
 }
@@ -8190,27 +4262,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Phoenix LiveView": {
-    "complexitychecks": [
-      "case ",
-      "cond ",
-      "if ",
-      "for ",
-      "with ",
-      "try ",
-      "catch ",
-      "rescue ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "|> ",
-      "<% ",
-      "<. "
-    ],
     "extensions": [
       "heex",
       "leex"
@@ -8224,24 +4275,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      },
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -8252,21 +4285,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Picat": {
-    "complexitychecks": [
-      "do ",
-      "foreach ",
-      "foreach(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "pi"
     ],
@@ -8278,12 +4296,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8294,18 +4306,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Pkl": {
-    "complexitychecks": [
-      "function ",
-      "?? ",
-      "?.",
-      "ifNonNull(",
-      "if ",
-      " else ",
-      ".map",
-      "for ",
-      "when ",
-      "..."
-    ],
     "extensions": [
       "pkl"
     ],
@@ -8317,25 +4317,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "#\"",
-        "start": "\"#"
-      },
-      {
-        "end": "##\"",
-        "start": "\"##"
-      },
-      {
-        "end": "\"\"\"",
-        "ignoreEscape": true,
-        "start": "\"\"\""
-      }
     ]
   }
 }
@@ -8346,14 +4327,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Plain Text": {
-    "complexitychecks": [],
     "extensions": [
       "text",
       "txt"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -8363,19 +4342,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Polly": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "polly"
     ],
@@ -8385,12 +4351,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8401,20 +4361,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Pony": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "match ",
-      "repeat",
-      "while ",
-      "else ",
-      "elseif ",
-      "| ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "pony"
     ],
@@ -8426,16 +4372,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      }
     ]
   }
 }
@@ -8446,39 +4382,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PostScript": {
-    "complexitychecks": [
-      "if",
-      "ifelse",
-      "for",
-      "repeat",
-      "loop",
-      "forall",
-      "pathforall",
-      "eq",
-      "ne",
-      "not",
-      "and",
-      "or"
-    ],
     "extensions": [
       "ps"
     ],
     "line_comment": [
       "%"
-    ],
-    "quotes": [
-      {
-        "end": ")",
-        "start": "("
-      },
-      {
-        "end": ">",
-        "start": "<"
-      },
-      {
-        "end": "~>",
-        "start": "<~"
-      }
     ]
   }
 }
@@ -8489,31 +4397,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Powershell": {
-    "complexitychecks": [
-      "while ",
-      "while(",
-      "until ",
-      "until(",
-      "for ",
-      "for(",
-      "foreach ",
-      "foreach(",
-      "if ",
-      "elseif ",
-      "else ",
-      "switch",
-      "switch(",
-      "-gt",
-      "-lt",
-      "-eq",
-      "-ne",
-      "-ge",
-      "-le",
-      "-in",
-      "-notin",
-      "-contains",
-      "-notcontains"
-    ],
     "extensions": [
       "ps1",
       "psm1"
@@ -8526,12 +4409,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<#",
         "#>"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8542,19 +4419,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Processing": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "pde"
     ],
@@ -8566,12 +4430,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8582,19 +4440,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Prolog": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "p",
       "pro"
@@ -8607,12 +4452,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8623,15 +4462,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Properties File": {
-    "complexitychecks": [],
     "extensions": [
       "properties"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -8641,19 +4478,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Protocol Buffers": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "proto"
     ],
@@ -8665,8 +4489,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -8676,19 +4499,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Puppet": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "pp"
     ],
@@ -8700,16 +4510,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "=begin",
         "=end"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -8720,19 +4520,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "PureScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "purs"
     ],
@@ -8744,8 +4531,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{-",
         "-}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -8755,32 +4541,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Python": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "while ",
-      "while(",
-      "if ",
-      "if(",
-      "elif ",
-      "elif(",
-      "else ",
-      "else:",
-      "match ",
-      "match(",
-      "try ",
-      "try:",
-      "except ",
-      "except:",
-      "finally ",
-      "finally:",
-      "with ",
-      "with (",
-      "and ",
-      "and(",
-      "or ",
-      "or("
-    ],
     "extensions": [
       "py",
       "pyw",
@@ -8789,64 +4549,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "ignoreEscape": true,
-        "end": "'",
-        "start": "r'"
-      },
-      {
-        "ignoreEscape": true,
-        "end": "\"",
-        "start": "r\""
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "docString": true,
-        "ignoreEscape": true,
-        "end": "\"\"\"",
-        "start": "r\"\"\""
-      },
-      {
-        "docString": true,
-        "ignoreEscape": true,
-        "end": "'''",
-        "start": "r'''"
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "f\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "f'''"
-      }
-    ],
-    "shebangs": [
-      "python",
-      "python2",
-      "python3"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -8856,41 +4559,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Q#": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "repeat ",
-      "repeat{",
-      "until (",
-      "until(",
-      "if ",
-      "if(",
-      "elif ",
-      "elif{",
-      "else ",
-      "else{",
-      "||| ",
-      "&&& ",
-      "<<<",
-      ">>>",
-      "^^^",
-      "~~~",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "qs"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -8900,19 +4575,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "QCL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "qcl"
     ],
@@ -8924,12 +4586,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8940,19 +4596,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "QML": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "qml"
     ],
@@ -8964,12 +4607,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -8980,30 +4617,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "R": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "r"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [],
-    "shebangs": [
-      "Rscript"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -9013,7 +4633,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "RAML": {
-    "complexitychecks": [],
     "extensions": [
       "raml",
       "rml"
@@ -9021,8 +4640,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -9032,23 +4650,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Racket": {
-    "complexitychecks": [
-      "(if",
-      "(cond",
-      "[else",
-      "(and",
-      "(or",
-      "(for",
-      "#:when",
-      "#:unless",
-      "#:break",
-      "#:final",
-      "(do",
-      "(when",
-      "(unless",
-      "(shared",
-      "(case"
-    ],
     "extensions": [
       "rkt"
     ],
@@ -9060,16 +4661,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "|#",
         "#|"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ],
-    "shebangs": [
-      "racket"
     ]
   }
 }
@@ -9080,24 +4671,7 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Rakefile": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [],
-    "filenames": [
-      "rake",
-      "rakefile"
-    ],
     "line_comment": [
       "#"
     ],
@@ -9106,16 +4680,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "=begin",
         "=end"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -9126,76 +4690,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Raku": {
-    "complexitychecks": [
-      "== ",
-      "\u2261 ",
-      "!= ",
-      "\u2260 ",
-      "!== ",
-      "\u2262 ",
-      "< ",
-      "\u2282 ",
-      "!< ",
-      "\u2284 ",
-      "<= ",
-      "\u2264 ",
-      "\u2286 ",
-      "!<= ",
-      "\u2288 ",
-      "> ",
-      "\u2283 ",
-      "!> ",
-      "\u2285 ",
-      ">= ",
-      "\u2265 ",
-      "\u2287 ",
-      "!>= ",
-      "\u2289 ",
-      "=~= ",
-      "\u2245 ",
-      "=== ",
-      "eq ",
-      "!eq ",
-      "eqv ",
-      "ne ",
-      "gt ",
-      "ge ",
-      "lt ",
-      "le ",
-      "=:=",
-      "CATCH ",
-      "CONTROL ",
-      "DOC ",
-      "NEXT ",
-      "and ",
-      "default ",
-      "do {",
-      "else ",
-      "elsif ",
-      "emit ",
-      "for ",
-      "gather ",
-      "given ",
-      "if ",
-      "last ",
-      "loop (",
-      "next ",
-      "once ",
-      "or ",
-      "orwith ",
-      "react {",
-      "redo ",
-      "repeat ",
-      "start {",
-      "supply ",
-      "unless ",
-      "until ",
-      "when ",
-      "whenever ",
-      "while ",
-      "with ",
-      "without "
-    ],
     "extensions": [
       "raku",
       "rakumod",
@@ -9227,43 +4721,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#`\uff62",
         "\uff63"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\u201c",
-        "start": "\u201e"
-      },
-      {
-        "end": "\u00bb",
-        "start": "\u00ab"
-      },
-      {
-        "end": ">>",
-        "start": "<<"
-      },
-      {
-        "end": "\u201d",
-        "start": "\u201c"
-      },
-      {
-        "end": "\u2018",
-        "start": "\u2019"
-      },
-      {
-        "end": "\uff63",
-        "start": "\uff62"
-      }
-    ],
-    "shebangs": [
-      "raku"
     ]
   }
 }
@@ -9274,19 +4731,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Razor": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cshtml",
       "razor"
@@ -9301,8 +4745,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "@*",
         "*@"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -9312,20 +4755,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ReScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "=== "
-    ],
     "extensions": [
       "res",
       "resi"
@@ -9338,12 +4767,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9354,13 +4777,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ReStructuredText": {
-    "complexitychecks": [],
     "extensions": [
       "rst"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -9370,19 +4791,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ReasonML": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "re",
       "rei"
@@ -9395,12 +4803,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9411,15 +4813,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Redscript": {
-    "complexitychecks": [
-      "for ",
-      "@if(",
-      "switch ",
-      "while ",
-      "else ",
-      "func ",
-      "-> "
-    ],
     "extensions": [
       "reds"
     ],
@@ -9432,13 +4825,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9449,7 +4835,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Report Definition Language": {
-    "complexitychecks": [],
     "extensions": [
       "rdl"
     ],
@@ -9459,12 +4844,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9475,13 +4854,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Robot Framework": {
-    "complexitychecks": [],
     "extensions": [
       "robot"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -9491,19 +4868,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ruby": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "rb"
     ],
@@ -9515,19 +4879,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "=begin",
         "=end"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "ruby"
     ]
   }
 }
@@ -9538,19 +4889,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ruby HTML": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "rhtml",
       "erb"
@@ -9561,12 +4899,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9577,20 +4909,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Rust": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "match "
-    ],
     "extensions": [
       "rs"
     ],
@@ -9602,13 +4920,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9619,22 +4930,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SAS": {
-    "complexitychecks": [
-      "do",
-      "%do",
-      "if",
-      "%if",
-      "else",
-      "%else",
-      "case",
-      "or",
-      "and",
-      "^=",
-      "\u00ac=",
-      "~=",
-      "ne",
-      "eq"
-    ],
     "extensions": [
       "sas"
     ],
@@ -9646,16 +4941,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -9666,19 +4951,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SKILL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "il"
     ],
@@ -9690,12 +4962,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9706,28 +4972,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SNOBOL": {
-    "complexitychecks": [
-      ":(",
-      ":s(",
-      ":f(",
-      "eq ",
-      "ne "
-    ],
     "extensions": [
       "sno"
     ],
     "line_comment": [
       "*"
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -9738,13 +4987,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SPDX": {
-    "complexitychecks": [],
     "extensions": [
       "spdx"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -9754,23 +5001,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SPL": {
-    "complexitychecks": [
-      "construct",
-      "foreach",
-      "map",
-      "while",
-      "if",
-      "include",
-      "catch",
-      "and",
-      "or",
-      "not",
-      "call",
-      "<|",
-      "<{",
-      "dup",
-      "swap"
-    ],
     "extensions": [
       "spl"
     ],
@@ -9780,27 +5010,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "\"",
         "\";"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": " ",
-        "start": "^"
-      },
-      {
-        "end": ">",
-        "start": "^"
-      },
-      {
-        "end": ":",
-        "start": "^"
-      }
-    ],
-    "shebangs": [
-      "spl"
     ]
   }
 }
@@ -9811,19 +5020,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SQL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "sql",
       "dml",
@@ -9838,12 +5034,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -9854,27 +5044,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SRecode Template": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "srt"
     ],
     "line_comment": [
       ";;"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -9884,19 +5060,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SVG": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "svg"
     ],
@@ -9906,12 +5069,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9922,19 +5079,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Sass": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "sass",
       "scss"
@@ -9947,12 +5091,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -9963,23 +5101,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Scala": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      ">= ",
-      "> ",
-      "<= ",
-      "< "
-    ],
     "extensions": [
       "sc",
       "scala"
@@ -9992,12 +5113,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10008,24 +5123,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Scallop": {
-    "complexitychecks": [
-      "rel ",
-      "count(",
-      "sum(",
-      "prod(",
-      "min(",
-      "max(",
-      "exists(",
-      "forall(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      ">= ",
-      "> ",
-      "<= ",
-      "< "
-    ],
     "extensions": [
       "scl"
     ],
@@ -10037,12 +5134,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10053,19 +5144,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Scheme": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "scm",
       "ss"
@@ -10078,10 +5156,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "#|",
         "|#"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [],
-    "shebangs": []
+    ]
   }
 }
 ```
@@ -10091,19 +5166,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Scons": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "csig",
       "sconstruct",
@@ -10112,25 +5174,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -10140,42 +5184,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Shell": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "sh"
-    ],
-    "filenames": [
-      ".tcshrc"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "sh"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -10185,18 +5200,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Sieve": {
-    "complexitychecks": [
-      "if",
-      "if ",
-      "elsif",
-      "elsif ",
-      "allof",
-      "allof ",
-      "anyof",
-      "anyof ",
-      "allof(",
-      "anyof("
-    ],
     "extensions": [
       "sieve"
     ],
@@ -10208,12 +5211,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10224,19 +5221,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Slang": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "slang"
     ],
@@ -10248,12 +5232,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10264,18 +5242,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Slint": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "if(",
-      "states ",
-      "states[",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "slint"
     ],
@@ -10287,12 +5253,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10303,24 +5263,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Smalltalk": {
-    "complexitychecks": [
-      "bitAnd ",
-      "bitOr ",
-      "bitXor ",
-      "bitInvert ",
-      "bitShift ",
-      "bitAt ",
-      "highbit ",
-      "allMask ",
-      "anyMask ",
-      "noMask ",
-      "ifTrue ",
-      "ifFalse ",
-      "switch ",
-      "whileTrue ",
-      "whileFalse ",
-      "to: "
-    ],
     "extensions": [
       "cs.st",
       "pck.st"
@@ -10331,12 +5273,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "\"",
         "\""
       ]
-    ],
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -10347,20 +5283,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Smarty Template": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "include "
-    ],
     "extensions": [
       "tpl"
     ],
@@ -10370,8 +5292,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{*",
         "*}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -10381,73 +5302,14 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Snakemake": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "while ",
-      "while(",
-      "if ",
-      "if(",
-      "elif ",
-      "elif(",
-      "else ",
-      "else:",
-      "match ",
-      "match(",
-      "try ",
-      "try:",
-      "except ",
-      "except(",
-      "finally ",
-      "finally:",
-      "with ",
-      "with (",
-      "and ",
-      "and(",
-      "or ",
-      "or("
-    ],
     "extensions": [
       "smk",
       "rules"
     ],
-    "filenames": [
-      "snakefile"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "'''"
-      },
-      {
-        "docString": true,
-        "end": "\"\"\"",
-        "start": "r\"\"\""
-      },
-      {
-        "docString": true,
-        "end": "'''",
-        "start": "r'''"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -10457,33 +5319,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Softbridge Basic": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "elseif ",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "sbl"
     ],
     "line_comment": [
       "'"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -10493,23 +5335,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Solidity": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== ",
-      "assembly ",
-      "assembly{",
-      "unchecked ",
-      "unchecked{"
-    ],
     "extensions": [
       "sol"
     ],
@@ -10521,12 +5346,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10537,19 +5356,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Specman e": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "e"
     ],
@@ -10562,8 +5368,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "'>",
         "<'"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -10573,27 +5378,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Spice Netlist": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ckt"
     ],
     "line_comment": [
       "*"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -10603,7 +5394,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Stan": {
-    "complexitychecks": [],
     "extensions": [
       "stan"
     ],
@@ -10616,12 +5406,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10632,19 +5416,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Standard ML (SML)": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "sml"
     ],
@@ -10654,12 +5425,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10670,18 +5435,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Stata": {
-    "complexitychecks": [
-      "foreach",
-      "forvalues",
-      "if",
-      "else",
-      "while",
-      "switch",
-      "|",
-      "&",
-      "!=",
-      "=="
-    ],
     "extensions": [
       "do",
       "ado"
@@ -10695,16 +5448,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\"'",
-        "start": "`\""
-      }
     ]
   }
 }
@@ -10715,16 +5458,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Stylus": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "unless ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "styl"
     ],
@@ -10736,12 +5469,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10752,19 +5479,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Svelte": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "svelte"
     ],
@@ -10780,12 +5494,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10796,22 +5504,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Swift": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "catch ",
-      "guard ",
-      "?",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "swift"
     ],
@@ -10823,13 +5515,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10840,7 +5525,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Swig": {
-    "complexitychecks": [],
     "extensions": [
       "i"
     ],
@@ -10850,12 +5534,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10866,45 +5544,9 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "SystemVerilog": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "| ",
-      "& ",
-      "!= ",
-      "!== ",
-      "== ",
-      "foreach ",
-      "foreach(",
-      "case ",
-      "case(",
-      "casex ",
-      "casex(",
-      "casez ",
-      "casez(",
-      "casexz ",
-      "casexz(",
-      "fork ",
-      " ? ",
-      "inside",
-      "with",
-      "event "
-    ],
     "extensions": [
       "sv",
       "svh"
-    ],
-    "keywords": [
-      "endmodule",
-      "posedge",
-      "edge",
-      "always",
-      "wire"
     ],
     "line_comment": [
       "//"
@@ -10914,12 +5556,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -10930,7 +5566,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Systemd": {
-    "complexitychecks": [],
     "extensions": [
       "automount",
       "device",
@@ -10948,8 +5583,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -10959,39 +5593,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TCL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "tcl"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "tcl"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -11001,7 +5609,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TL": {
-    "complexitychecks": [],
     "extensions": [
       "tl"
     ],
@@ -11014,8 +5621,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -11025,44 +5631,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TOML": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "toml"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\\\"\\\"\\\"",
-        "start": "\\\"\\\"\\\""
-      },
-      {
-        "end": "'''",
-        "start": "'''"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -11072,25 +5647,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TTCN-3": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "from ",
-      "if ",
-      "if(",
-      "select ",
-      "case ",
-      "while ",
-      "do ",
-      "goto ",
-      "stop ",
-      "break ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ttcn",
       "ttcn3",
@@ -11104,12 +5660,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -11120,27 +5670,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Tact": {
-    "complexitychecks": [
-      "if ",
-      "if(",
-      "else ",
-      "try ",
-      "catch ",
-      "catch(",
-      "repeat ",
-      "repeat(",
-      "while ",
-      "while(",
-      "do ",
-      "until ",
-      "until(",
-      "foreach ",
-      "foreach(",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "tact"
     ],
@@ -11153,12 +5682,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -11169,13 +5692,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TaskPaper": {
-    "complexitychecks": [],
     "extensions": [
       "taskpaper"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -11185,19 +5706,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TeX": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "tex",
       "sty"
@@ -11205,8 +5713,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "%"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -11216,24 +5723,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Teal": {
-    "complexitychecks": [
-      "loop:",
-      "retsub",
-      "callsub ",
-      "&&",
-      "==",
-      "||",
-      "<=",
-      ">="
-    ],
     "extensions": [
       "teal"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -11243,18 +5739,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Templ": {
-    "complexitychecks": [
-      "if ",
-      " else ",
-      "switch ",
-      "case ",
-      "default:",
-      "for ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "templ"
     ],
@@ -11266,17 +5750,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "ignoreEscape": true,
-        "start": "`"
-      }
     ]
   }
 }
@@ -11287,19 +5760,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TemplateToolkit": {
-    "complexitychecks": [
-      "[% BLOCK",
-      "[% FILTER",
-      "[% FOR",
-      "[% FOREACH",
-      "[% IF",
-      "[% INCLUDE",
-      "[% MACRO",
-      "[% PROCESS",
-      "[% SWITCH",
-      "[% UNLESS",
-      "[% WRAPPER"
-    ],
     "extensions": [
       "tt",
       "tt2"
@@ -11310,8 +5770,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "[%#",
         "%]"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -11321,17 +5780,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Tera": {
-    "complexitychecks": [
-      "{% include ",
-      "{% macro ",
-      "{% block ",
-      "{% extends ",
-      "{% for ",
-      "{% set ",
-      "{% if ",
-      "{% elif ",
-      "{% else "
-    ],
     "extensions": [
       "tera"
     ],
@@ -11345,8 +5793,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "{#",
         "#}"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -11356,22 +5803,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Terraform": {
-    "complexitychecks": [
-      "count",
-      "for",
-      "for_each",
-      "if",
-      ": ",
-      "? ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "> ",
-      ">= ",
-      "< ",
-      "<= ",
-      "== "
-    ],
     "extensions": [
       "tf",
       "tfvars",
@@ -11386,8 +5817,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -11397,7 +5827,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Textile": {
-    "complexitychecks": [],
     "extensions": [
       "textile"
     ],
@@ -11409,8 +5838,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "###.. ",
         "p. "
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -11420,7 +5848,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Thrift": {
-    "complexitychecks": [],
     "extensions": [
       "thrift"
     ],
@@ -11433,16 +5860,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -11453,35 +5870,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Treetop": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "treetop",
       "tt"
     ],
     "line_comment": [
       "#"
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -11492,18 +5886,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Twig Template": {
-    "complexitychecks": [
-      "{% for ",
-      "{% if ",
-      "{% else ",
-      "{% elseif "
-    ],
     "extensions": [
       "twig"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -11513,26 +5900,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TypeScript": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "!== ",
-      "== ",
-      "=== ",
-      "case ",
-      "case(",
-      "?.",
-      "?? ",
-      "??= "
-    ],
     "extensions": [
       "ts",
       "tsx"
@@ -11545,20 +5912,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
     ]
   }
 }
@@ -11569,26 +5922,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TypeScript Typings": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "!== ",
-      "== ",
-      "=== ",
-      "case ",
-      "case(",
-      "?.",
-      "?? ",
-      "??= "
-    ],
     "extensions": [
       "d.ts"
     ],
@@ -11600,20 +5933,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
     ]
   }
 }
@@ -11624,7 +5943,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "TypeSpec": {
-    "complexitychecks": [],
     "extensions": [
       "tsp"
     ],
@@ -11636,17 +5954,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\"\"\"",
-        "ignoreEscape": true,
-        "start": "\"\"\""
-      }
     ]
   }
 }
@@ -11668,13 +5975,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
     ]
   }
 }
@@ -11685,19 +5985,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Unreal Script": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "uc",
       "uci",
@@ -11711,12 +5998,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -11727,37 +6008,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Up": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "switch ",
-      "while ",
-      "else ",
-      "try ",
-      "func ",
-      "up ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "up"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -11767,19 +6024,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ur/Web": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "ur",
       "urs"
@@ -11790,12 +6034,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -11806,27 +6044,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Ur/Web Project": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "urp"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -11836,56 +6060,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "V": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "v"
-    ],
-    "keywords": [
-      "break",
-      "const ",
-      "continue",
-      "defer",
-      "else ",
-      "enum",
-      "fn ",
-      "goto",
-      "import ",
-      "in ",
-      "interface",
-      "match",
-      "mut",
-      "println",
-      "pub",
-      "return",
-      "struct ",
-      "type "
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -11895,127 +6076,14 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "VHDL": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vhd",
       "vhdl"
     ],
-    "keywords": [
-      "abs",
-      "access",
-      "after",
-      "alias",
-      "all",
-      "and",
-      "architecture",
-      "array",
-      "assert",
-      "attribute",
-      "begin",
-      "block",
-      "body",
-      "buffer",
-      "bus",
-      "case",
-      "component",
-      "configuration",
-      "constant",
-      "disconnect",
-      "downto",
-      "else",
-      "elsif",
-      "end",
-      "entity",
-      "exit",
-      "file",
-      "for",
-      "function",
-      "generate",
-      "generic",
-      "group",
-      "guarded",
-      "if",
-      "impure",
-      "in",
-      "inertial",
-      "inout",
-      "is",
-      "label",
-      "library",
-      "linkage",
-      "literal",
-      "loop",
-      "map",
-      "mod",
-      "nand",
-      "new",
-      "next",
-      "nor",
-      "not",
-      "null",
-      "of",
-      "on",
-      "open",
-      "or",
-      "others",
-      "out",
-      "package",
-      "port",
-      "postponed",
-      "procedure",
-      "process",
-      "pure",
-      "range",
-      "record",
-      "register",
-      "reject",
-      "rem",
-      "report",
-      "return",
-      "rol",
-      "ror",
-      "select",
-      "severity",
-      "shared",
-      "signal",
-      "sla",
-      "sll",
-      "sra",
-      "srl",
-      "subtype",
-      "then",
-      "to",
-      "transport",
-      "type",
-      "unaffected",
-      "units",
-      "until",
-      "use",
-      "variable",
-      "wait",
-      "when",
-      "while",
-      "with",
-      "xnor",
-      "xor"
-    ],
     "line_comment": [
       "--"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12025,23 +6093,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Vala": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "foreach ",
-      "foreach(",
-      "if ",
-      "if(",
-      "switch ",
-      "switch(",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vala"
     ],
@@ -12053,21 +6104,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "\"",
-        "start": "@\""
-      },
-      {
-        "ignoreEscape": true,
-        "end": "\"\"\"",
-        "start": "\"\"\""
-      }
     ]
   }
 }
@@ -12078,7 +6114,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Varnish Configuration": {
-    "complexitychecks": [],
     "extensions": [
       "vcl"
     ],
@@ -12091,8 +6126,7 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": []
+    ]
   }
 }
 ```
@@ -12102,47 +6136,10 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Verilog": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vg",
       "vh",
       "v"
-    ],
-    "keywords": [
-      "module",
-      "endmodule",
-      "timescale",
-      "input",
-      "output",
-      "reg",
-      "wire",
-      "posedge",
-      "negedge",
-      "always",
-      "begin",
-      "switch",
-      "case",
-      "end",
-      "endcase",
-      "else",
-      "localparam",
-      "initial",
-      "signed",
-      "assign",
-      "generate",
-      "genvar"
     ],
     "line_comment": [
       "//"
@@ -12152,12 +6149,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12168,14 +6159,12 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Verilog Args File": {
-    "complexitychecks": [],
     "extensions": [
       "irunargs",
       "xrunargs"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12185,19 +6174,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Vertex Shader File": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vsh"
     ],
@@ -12209,12 +6185,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12225,29 +6195,8 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Vim Script": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vim",
-      "vimrc",
-      "gvimrc"
-    ],
-    "filenames": [
-      "_vimrc",
-      ".vimrc",
-      "_gvimrc",
-      ".gvimrc",
       "vimrc",
       "gvimrc"
     ],
@@ -12255,17 +6204,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "\"",
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -12275,33 +6214,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Visual Basic": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "elseif ",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vb"
     ],
     "line_comment": [
       "'"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -12311,33 +6230,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Visual Basic for Applications": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "elseif ",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "cls"
     ],
     "line_comment": [
       "'"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -12347,19 +6246,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Vue": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "vue"
     ],
@@ -12375,16 +6261,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
     ]
   }
 }
@@ -12395,13 +6271,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "W.I.S.E. Jobfile": {
-    "complexitychecks": [],
     "extensions": [
       "fgmj"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12420,12 +6294,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12436,20 +6304,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "WebGPU Shading Language": {
-    "complexitychecks": [
-      "for (",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "while(",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "wgsl"
     ],
@@ -12474,20 +6328,6 @@ This page lists all the programming languages supported by `pylocc` and their re
     "extensions": [
       "rc"
     ],
-    "keywords": [
-      "#include",
-      "#define",
-      "RC_INVOKED",
-      "VERSIONINFO",
-      "FILEVERSION",
-      "PRODUCTVERSION",
-      "FILEOS",
-      "FILETYPE",
-      "BLOCK",
-      "VALUE",
-      "StringFileInfo",
-      "VarFileInfo"
-    ],
     "line_comment": [
       "//"
     ],
@@ -12496,12 +6336,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12512,19 +6346,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Wolfram": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "nb",
       "wl"
@@ -12535,12 +6356,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "(*",
         "*)"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12551,19 +6366,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Wren": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "wren"
     ],
@@ -12575,13 +6377,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12592,19 +6387,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "XAML": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "xaml"
     ],
@@ -12614,12 +6396,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12639,12 +6415,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12655,13 +6425,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "XML Schema": {
-    "complexitychecks": [],
     "extensions": [
       "xsd"
     ],
     "line_comment": [],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12671,29 +6439,7 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "XMake": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "while ",
-      "while(",
-      "else ",
-      "else(",
-      "elseif ",
-      "elseif(",
-      "until ",
-      "until(",
-      "or ",
-      "and ",
-      "~= ",
-      "== "
-    ],
     "extensions": [],
-    "filenames": [
-      "xmake.lua",
-      "xpack.lua"
-    ],
     "line_comment": [
       "--"
     ],
@@ -12722,17 +6468,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "--[=====[",
         "]=====]"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "[[",
-        "start": "]]",
-        "ignoreEscape": true
-      }
     ]
   }
 }
@@ -12743,15 +6478,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Xcode Config": {
-    "complexitychecks": [],
     "extensions": [
       "xcconfig"
     ],
     "line_comment": [
       "//"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12761,19 +6494,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Xtend": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "xtend"
     ],
@@ -12785,12 +6505,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -12801,7 +6515,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "YAML": {
-    "complexitychecks": [],
     "extensions": [
       "yaml",
       "yml"
@@ -12809,8 +6522,7 @@ This page lists all the programming languages supported by `pylocc` and their re
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -12820,34 +6532,10 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Yarn": {
-    "complexitychecks": [
-      "<<if ",
-      "<<elseif ",
-      "<<else ",
-      " eq ",
-      " == ",
-      " neq ",
-      " ! ",
-      " gt ",
-      " > ",
-      " lt ",
-      " < ",
-      " lte ",
-      " <= ",
-      " gte ",
-      " >= ",
-      " xor ",
-      " ^ ",
-      " and ",
-      " && ",
-      " || ",
-      " or "
-    ],
     "extensions": [
       "yarn"
     ],
-    "line_comment": [],
-    "quotes": []
+    "line_comment": []
   }
 }
 ```
@@ -12857,36 +6545,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Zig": {
-    "complexitychecks": [
-      "catch ",
-      "while ",
-      "for ",
-      "if ",
-      "else ",
-      "errdefer ",
-      "try ",
-      "switch ",
-      "orelse ",
-      "||",
-      "&&",
-      "!=",
-      "=="
-    ],
     "extensions": [
       "zig"
     ],
     "line_comment": [
       "//"
-    ],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "\n",
-        "start": "\\\\"
-      }
     ]
   }
 }
@@ -12897,17 +6560,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ZoKrates": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "zok"
     ],
@@ -12929,19 +6581,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "Zsh": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "|| ",
-      "&& ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "zsh",
       "zshenv",
@@ -12950,30 +6589,10 @@ This page lists all the programming languages supported by `pylocc` and their re
       "zprofile",
       "zshrc"
     ],
-    "filenames": [
-      ".zshenv",
-      ".zlogin",
-      ".zlogout",
-      ".zprofile",
-      ".zshrc"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\\\"",
-        "start": "\\\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      }
-    ],
-    "shebangs": [
-      "zsh"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -12983,31 +6602,8 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "bait": {
-    "complexitychecks": [
-      "for ",
-      "if ",
-      "else ",
-      " or ",
-      " and ",
-      "!= ",
-      "== "
-    ],
     "extensions": [
       "bt"
-    ],
-    "keywords": [
-      "and",
-      "break",
-      "const ",
-      "continue",
-      "else ",
-      "fun ",
-      "import ",
-      "not ",
-      "or ",
-      "package ",
-      "return",
-      "struct "
     ],
     "line_comment": [
       "//"
@@ -13017,21 +6613,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "/*",
         "*/"
       ]
-    ],
-    "nestedmultiline": true,
-    "quotes": [
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "`",
-        "start": "`"
-      }
     ]
   }
 }
@@ -13042,16 +6623,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "gitignore": {
-    "complexitychecks": [],
     "extensions": [],
-    "filenames": [
-      ".gitignore"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -13061,70 +6637,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "hoon": {
-    "complexitychecks": [
-      "%+  turn",
-      "(turn ",
-      "%+  roll",
-      "(roll ",
-      "%+  reel",
-      "(reel ",
-      "|.  ",
-      "|.(",
-      "|-  ",
-      "|-(",
-      "|?  ",
-      "|?(",
-      "?|  ",
-      "?|(",
-      "|(",
-      "?-  ",
-      "?-(",
-      "?:  ",
-      "?:(",
-      "?.  ",
-      "?.(",
-      "?^  ",
-      "?^(",
-      "?<  ",
-      "?<(",
-      "?>  ",
-      "?>(",
-      "?+  ",
-      "?+(",
-      "?&  ",
-      "?&(",
-      "&(",
-      "?@  ",
-      "?@(",
-      "?~  ",
-      "?~(",
-      "?=  ",
-      "?=(",
-      ".=  ",
-      "=(",
-      "!=("
-    ],
     "extensions": [
       "hoon"
     ],
     "line_comment": [
       "::"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      },
-      {
-        "end": "'",
-        "start": "'"
-      },
-      {
-        "end": "```",
-        "start": "```"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -13134,16 +6653,11 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "ignore": {
-    "complexitychecks": [],
     "extensions": [],
-    "filenames": [
-      ".ignore"
-    ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -13153,37 +6667,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "jq": {
-    "complexitychecks": [
-      ".",
-      "if ",
-      "elif ",
-      "else ",
-      "!= ",
-      "== ",
-      ">= ",
-      "<= ",
-      "< ",
-      "> ",
-      "and ",
-      "or ",
-      "not ",
-      "// ",
-      "try ",
-      "break "
-    ],
     "extensions": [
       "jq"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -13193,15 +6683,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "m4": {
-    "complexitychecks": [],
     "extensions": [
       "m4"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": []
+    "multi_line": []
   }
 }
 ```
@@ -13220,12 +6708,6 @@ This page lists all the programming languages supported by `pylocc` and their re
         "<!--",
         "-->"
       ]
-    ],
-    "quotes": [
-      {
-        "end": "\"",
-        "start": "\""
-      }
     ]
   }
 }
@@ -13236,30 +6718,13 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "sed": {
-    "complexitychecks": [
-      "for ",
-      "for(",
-      "if ",
-      "if(",
-      "switch ",
-      "while ",
-      "else ",
-      "and ",
-      "or ",
-      "not ",
-      "in "
-    ],
     "extensions": [
       "sed"
     ],
     "line_comment": [
       "#"
     ],
-    "multi_line": [],
-    "quotes": [],
-    "shebangs": [
-      "sed"
-    ]
+    "multi_line": []
   }
 }
 ```
@@ -13269,21 +6734,6 @@ This page lists all the programming languages supported by `pylocc` and their re
 ```json
 {
   "wenyan": {
-    "complexitychecks": [
-      "\u82e5",
-      "\u82e5\u975e",
-      "\u7b49\u65bc",
-      "\u4e0d\u7b49\u65bc",
-      "\u4e0d\u5927\u65bc",
-      "\u4e0d\u5c0f\u65bc",
-      "\u5927\u65bc",
-      "\u5c0f\u65bc",
-      "\u51e1",
-      "\u70ba\u662f",
-      "\u6046\u70ba\u662f",
-      "\u4e2d\u4e4b",
-      "\u904d"
-    ],
     "extensions": [
       "wy"
     ],
@@ -13292,13 +6742,7 @@ This page lists all the programming languages supported by `pylocc` and their re
       "\u6ce8\u66f0",
       "\u758f\u66f0"
     ],
-    "multi_line": [],
-    "quotes": [
-      {
-        "end": "\u300c\u300c",
-        "start": "\u300d\u300d"
-      }
-    ]
+    "multi_line": []
   }
 }
 ```
