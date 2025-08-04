@@ -60,7 +60,7 @@ def get_all_file_paths_pathlib(folder: str, supported_extensions: List[str] = []
 @click.option('--by-file', is_flag=True,
               help='Generate report by file.')
 @click.option('--output', type=click.Path(exists=False, dir_okay=False, readable=True, writable=True),
-              help='Stores the output report to the given path')
+              help='Stores the output report in csv format to the given path')
 def pylocc(file, by_file, output):
     """Run pylocc on the specified file or directory."""
     configs = load_language_config()

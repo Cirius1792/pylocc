@@ -44,7 +44,7 @@ Usage: pylocc [OPTIONS] FILE
 
 Options:
   --by-file      Generate report by file.
-  --output FILE  Stores the output report to the given path
+  --output FILE  Stores the output report in csv format to the given path
   --help         Show this message and exit.
 
 ```
