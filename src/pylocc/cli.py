@@ -2,6 +2,7 @@ import os
 from typing import List
 import click
 from pathlib import Path
+from rich.console import Console
 
 from pylocc.processor import Processor, ProcessorConfiguration, ProcessorConfigurationFactory
 from pylocc.reporter import report_aggregate, report_by_file
@@ -69,11 +70,9 @@ def pylocc(file, by_file, output):
     configuration_factory = ProcessorConfigurationFactory(configs)
 
     if os.path.isdir(file):
-        click.echo(f"Processing directory: {file}")
         files = get_all_file_paths_pathlib(
             file, supported_extensions=supported_extensions)
     else:
-        click.echo(f"Processing file: {file}")
         files = [file]
 
     processor = Processor()
@@ -97,15 +96,13 @@ def pylocc(file, by_file, output):
             click.echo(f"Error processing file {f}: {e} Skipping...")
             continue
     if per_file_reports:
-        report_table = ''
+        console = Console()
+        report_table = None
         if by_file:
             report_table = report_by_file(per_file_reports)
         else:
             report_table = report_aggregate(per_file_reports)
-        click.echo(str(report_table))
-        if output:
-            with open(output, 'w', encoding='utf-8') as output_file:
-                output_file.write(report_table.get_formatted_string('csv'))
+        console.print(report_table)
 
 
 if __name__ == '__main__':

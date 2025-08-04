@@ -1,6 +1,6 @@
-from typing import Dict, List
+from typing import Dict
 from pylocc.processor import Report
-from prettytable import PrettyTable
+from rich.table import Table
 
 # Language,Provider,Filename,Lines,Code,Comments,Blanks,Complexity,Bytes,ULOC
 file_type_header = "Language"
@@ -12,26 +12,28 @@ comment_line_header = "Comments"
 blank_line_header = "Blanks"
 
 
-def report_by_file(processed: Dict[str, Report]) -> PrettyTable:
-    """Given the report by file, prepares a table contaning the results. 
+def report_by_file(processed: Dict[str, Report]) -> Table:
+    """Given the report by file, prepares a table contaning the results.
     Also generates an overall report aggregating all the informations"""
-    report = PrettyTable()
-    report.field_names = [file_path_header, total_line_header,
-                          code_line_header, comment_line_header, blank_line_header]
-    # Initialize integer formatters for the report
-    report = initialize_int_formatters(report, report.field_names[1:])
+    report = Table(show_header=True, header_style="bold magenta")
+    report.add_column(file_path_header, style="dim")
+    report.add_column(total_line_header, justify="right")
+    report.add_column(code_line_header, justify="right")
+    report.add_column(comment_line_header, justify="right")
+    report.add_column(blank_line_header, justify="right")
+
     for file_path, report_data in processed.items():
-        report.add_row([
+        report.add_row(
             file_path,
-            report_data.total,
-            report_data.code,
-            report_data.comments,
-            report_data.blanks
-        ])
+            f"{report_data.total:,}",
+            f"{report_data.code:,}",
+            f"{report_data.comments:,}",
+            f"{report_data.blanks:,}",
+        )
     return report
 
 
-def report_aggregate(processed: Dict[str, Report]) -> PrettyTable:
+def report_aggregate(processed: Dict[str, Report]) -> Table:
     """Given the report by file, prepares a table containing the overall results."""
     # Initialize accumulators for the overall aggregated numbers
     total_lines = 0
@@ -45,10 +47,10 @@ def report_aggregate(processed: Dict[str, Report]) -> PrettyTable:
     files_per_type = {}
     for report_data in processed.values():
         if report_data.file_type not in aggregated_report:
-            # If there is no accumulator yet, initialize it 
+            # If there is no accumulator yet, initialize it
             aggregated_report[report_data.file_type] = Report(
                 file_type=report_data.file_type)
-            # as well as it's corresponding file counter 
+            # as well as it's corresponding file counter
             files_per_type[report_data.file_type] = 0
 
         # Increment the accumulators for the code statistics
@@ -61,40 +63,35 @@ def report_aggregate(processed: Dict[str, Report]) -> PrettyTable:
         # Increment the total files counter
         files_per_type[report_data.file_type] += 1
 
-    report = PrettyTable()
-    report.field_names = [file_type_header, num_file_header,
-                          total_line_header, code_line_header, comment_line_header, blank_line_header]
-
-    # Exclude the file_type_header from the integer formatter setting
-    report = initialize_int_formatters(report, report.field_names[1:])
+    report = Table(show_header=True, header_style="bold magenta")
+    report.add_column(file_type_header, style="dim")
+    report.add_column(num_file_header, justify="right")
+    report.add_column(total_line_header, justify="right")
+    report.add_column(code_line_header, justify="right")
+    report.add_column(comment_line_header, justify="right")
+    report.add_column(blank_line_header, justify="right")
 
     for file_type, report_data in aggregated_report.items():
-        report.add_row([
+        report.add_row(
             file_type,
-            files_per_type[file_type],
-            report_data.total,
-            report_data.code,
-            report_data.comments,
-            report_data.blanks
-        ])
+            f"{files_per_type[file_type]:,}",
+            f"{report_data.total:,}",
+            f"{report_data.code:,}",
+            f"{report_data.comments:,}",
+            f"{report_data.blanks:,}",
+        )
         total_files += files_per_type[report_data.file_type]
         total_lines += report_data.total
         code_lines += report_data.code
         comment_lines += report_data.comments
         blank_lines += report_data.blanks
 
-    report.add_row(["Total", total_files, total_lines, code_lines,
-                   comment_lines, blank_lines])
+    report.add_row(
+        "Total",
+        f"{total_files:,}",
+        f"{total_lines:,}",
+        f"{code_lines:,}",
+        f"{comment_lines:,}",
+        f"{blank_lines:,}",
+    )
     return report
-
-
-def initialize_int_formatters(t: PrettyTable, headers: List[str]) -> PrettyTable:
-    """Initialize integer formatters for the provided tabel and the given headers"""
-    for header in headers:
-        t.custom_format[header] = format_number_with_thousand_separator
-    return t
-
-
-def format_number_with_thousand_separator(_, v) -> str:
-    """Formats a number with a thousand separator."""
-    return f"{v:,}" if isinstance(v, (int, float)) else str(v)
