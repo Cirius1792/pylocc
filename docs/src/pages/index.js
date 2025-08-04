@@ -11,7 +11,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img src="/pylocc/img/pylocc_logo.png" alt="pylocc logo" width="250" />
+        <img src="/pylocc/img/pylocc_logo_transparent.png" alt="pylocc logo" width="350" />
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
