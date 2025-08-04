@@ -19,7 +19,7 @@ jobs:
 
       - name: Upload coverage data
         uses: actions/upload-artifact@v4
-        include-hidden-files: true
         with:
+          include-hidden-files: true
           name: coverage-data
           path: .coverage
