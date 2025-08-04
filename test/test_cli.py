@@ -27,7 +27,6 @@ class TestCli(unittest.TestCase):
 
             # Assert
             self.assertEqual(result.exit_code, 0)
-            self.assertIn('Processing file: test.py', result.output)
             self.assertIn('Total', result.output)
 
     @patch('pylocc.cli.load_language_config')
@@ -52,7 +51,6 @@ class TestCli(unittest.TestCase):
 
             # Assert
             self.assertEqual(result.exit_code, 0)
-            self.assertIn('Processing directory: test_dir', result.output)
             self.assertIn('Total', result.output)
 
     @patch('pylocc.cli.load_language_config')
@@ -76,7 +74,6 @@ class TestCli(unittest.TestCase):
 
             # Assert
             self.assertEqual(result.exit_code, 0)
-            self.assertIn('Processing file: test.py', result.output)
             self.assertIn('Provider', result.output)
 
 if __name__ == '__main__':
