@@ -1,5 +1,5 @@
 # Python Loc Counter - PYLOCC
-![Tests](https://github.com/cirius1792/pylocc/actions/workflows/tests.yml/badge.svg) ![Coverage](coverage.svg)
+![Tests](https://github.com/cirius1792/pylocc/actions/workflows/tests.yml/badge.svg) ![Coverage](https://raw.githubusercontent.com/Cirius1792/pylocc/refs/heads/main/coverage.svg)
 <p align="center">
     <img src="https://cirius1792.github.io/pylocc/img/pylocc_logo_transparent.png" alt="pylocc logo" width="400"/>
 </p>
