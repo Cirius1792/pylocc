@@ -1,5 +1,6 @@
 import json
 import os
+SUPPORTED_CONFIGS= ["extensions", "line_comment", "multi_line"]
 
 def generate_language_docs():
     script_dir = os.path.dirname(__file__)
@@ -25,9 +26,10 @@ def generate_language_docs():
 
     for lang_name, config in sorted(languages_data.items()):
         markdown_content += f"## {lang_name}\n\n"
+        supported = {i[0]:i[1] for i in  filter( lambda item: item[0] in SUPPORTED_CONFIGS, config.items()) }
         
         markdown_content += "```json\n"
-        markdown_content += json.dumps({lang_name: config}, indent=2)
+        markdown_content += json.dumps({lang_name: supported}, indent=2)
         markdown_content += "\n```\n\n"
 
     try:
