@@ -7,6 +7,18 @@ authors = [
     { name = "Ciro Lucio Tecce", email = "cirolucio.tecce@gmail.com" }
 ]
 requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://cirius1792.github.io/pylocc/"
+Issues = "https://github.com/Cirius1792/pylocc/issues"
+
+
 dependencies = [
     "click>=8.2.1",
     "prettytable>=3.16.0",
