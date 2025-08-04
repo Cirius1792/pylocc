@@ -24,6 +24,20 @@ jobs:
         run: npm install
         working-directory: ./docs
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Generate language documentation
+        run: python generate_language_docs.py
+
+      - name: Commit generated language documentation
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: Update supported languages page [skip ci]"
+          file_pattern: docs/docs/supported-languages.md
+
       - name: Build
         run: npm run build
         working-directory: ./docs
