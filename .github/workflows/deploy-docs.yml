@@ -55,7 +55,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: docs-build
           path: ./docs/build
 
   deploy:
@@ -77,3 +77,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: docs-build
