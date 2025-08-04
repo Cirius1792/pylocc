@@ -13,7 +13,7 @@ on:
         - minor
         - major
   workflow_run:
-    workflows: ["Tests"]  # Replace "Test" with the exact name of your test workflow
+    workflows: ["Tests"]  
     types:
       - completed
     branches: [ main ]
