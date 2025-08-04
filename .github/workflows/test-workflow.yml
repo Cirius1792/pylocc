@@ -18,7 +18,7 @@ jobs:
         run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
 
       - name: Upload coverage data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-data
           path: .coverage
