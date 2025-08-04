@@ -13,12 +13,6 @@ jobs:
     uses: ./.github/workflows/test-workflow.yml
     permissions:
       actions: write # Required to upload artifacts
-    strategy:
-      matrix:
-        python-version: ['3.10', '3.11', '3.12']
-    with:
-      python-version: ${{ matrix.python-version }}
-      upload-coverage: ${{ matrix.python-version == '3.12' }}
 
   generate-badge:
     runs-on: ubuntu-latest

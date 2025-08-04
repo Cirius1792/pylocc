@@ -2,21 +2,13 @@ name: Reusable Test Workflow
 
 on:
   workflow_call:
-    inputs:
-      python-version:
-        required: true
-        type: string
-      upload-coverage:
-        required: false
-        type: boolean
-        default: false
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        python-version: ['3.10', '3.11', '3.12', '3.13']
 
     steps:
       - name: Checkout code
@@ -25,18 +17,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ inputs.python-version }}
+          python-version: ${{ matrix.python-version }}
 
       - name: Install uv
         uses: astral-sh/setup-uv@v6
-        with:
-          python-version: ${{ matrix.python-version }}
 
       - name: Run tests
         run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
 
       - name: Upload coverage data
-        if: ${{ inputs.upload-coverage }}
+        if: ${{ matrix.python-version == '3.13' }}
         uses: actions/upload-artifact@v4
         with:
           include-hidden-files: true
