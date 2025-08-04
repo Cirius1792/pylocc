@@ -3,7 +3,7 @@ from typing import List
 import click
 from pathlib import Path
 
-from pylocc.processor import Processor, ProcessorConfiguration
+from pylocc.processor import Processor, ProcessorConfiguration, ProcessorConfigurationFactory
 from pylocc.reporter import report_aggregate, report_by_file
 
 
@@ -23,32 +23,36 @@ def load_language_config() -> List[ProcessorConfiguration]:
         raise click.Abort()
 
 
-def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -> List[str]:
+def get_all_file_paths_pathlib(folder: str, supported_extensions: List[str] = []) -> List[str]:
     """
     Returns a list of all file paths using pathlib (more modern approach).
-    
+
     Args:
         folder (str): Path to the root folder to search
-        
+
     Returns:
         List[str]: List of absolute file paths as strings
     """
     folder_path = Path(folder)
-    
+
     if not folder_path.exists():
         raise FileNotFoundError(f"The path '{folder_path}' does not exist")
     if not folder_path.is_dir():
-        raise NotADirectoryError(f"The path '{folder_path}' is not a directory")
-    
+        raise NotADirectoryError(
+            f"The path '{folder_path}' is not a directory")
+
     # Use rglob to recursively find all files
-    file_paths = [str(file.resolve()) for file in folder_path.rglob('*') if file.is_file()]
+    file_paths = [str(file.resolve())
+                  for file in folder_path.rglob('*') if file.is_file()]
 
     # Filter by supported extensions if provided
     if supported_extensions:
         extensions_set = set(supported_extensions)
-        file_paths = [file for file in file_paths if Path(file).suffix[1:] in extensions_set]
-    
+        file_paths = [file for file in file_paths if Path(
+            file).suffix[1:] in extensions_set]
+
     return file_paths
+
 
 @click.command()
 @click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True))
@@ -59,38 +63,50 @@ def get_all_file_paths_pathlib(folder: str, supported_extensions:List[str]=[]) -
 def pylocc(file, by_file, output):
     """Run pylocc on the specified file or directory."""
     configs = load_language_config()
-    supported_extensions = [ext for config in configs for ext in config.file_extensions]
+    supported_extensions = [
+        ext for config in configs for ext in config.file_extensions]
+
+    configuration_factory = ProcessorConfigurationFactory(configs)
 
     if os.path.isdir(file):
         click.echo(f"Processing directory: {file}")
-        files = get_all_file_paths_pathlib(file, supported_extensions=supported_extensions)
+        files = get_all_file_paths_pathlib(
+            file, supported_extensions=supported_extensions)
     else:
         click.echo(f"Processing file: {file}")
         files = [file]
 
-    processor = Processor(configs)
+    processor = Processor()
     per_file_reports = {}
     for f in files:
         try:
             with open(f, 'r', encoding='utf-8', errors='ignore') as f_handle:
                 content = f_handle.readlines()
             file_extension = os.path.splitext(f)[1][1:]
-            report = processor.process(content, file_extension=file_extension)
-            per_file_reports[f] = report
+            file_configuration = configuration_factory.get_configuration(
+                file_extension)
+            if file_configuration:
+                report = processor.process(
+                    content, file_configuration=file_configuration)
+                per_file_reports[f] = report
+            else:
+                click.echo(
+                    f"No configuration found for file type '{file_extension}' in file {f}. Skipping...")
+                continue
         except Exception as e:
             click.echo(f"Error processing file {f}: {e} Skipping...")
             continue
-    if per_file_reports: 
-        report_table= ''
+    if per_file_reports:
+        report_table = ''
         if by_file:
             report_table = report_by_file(per_file_reports)
         else:
             report_table = report_aggregate(per_file_reports)
         click.echo(str(report_table))
-        if output: 
+        if output:
             with open(output, 'w', encoding='utf-8') as output_file:
                 output_file.write(report_table.get_formatted_string('csv'))
 
 
-if __name__== '__main__':
+if __name__ == '__main__':
     pylocc()

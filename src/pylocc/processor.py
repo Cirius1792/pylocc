@@ -1,12 +1,12 @@
 from dataclasses import dataclass
-from typing import Dict, List, Tuple, Iterable
+from typing import Dict, List, Optional, Tuple, Iterable
 
 
 class Report:
     __slots__ = ['file_type', 'code', 'comments', 'blanks']
 
-    def __init__(self,file_type, code: int = 0, comments: int = 0, blanks: int = 0):
-        self.file_type=file_type
+    def __init__(self, file_type, code: int = 0, comments: int = 0, blanks: int = 0):
+        self.file_type = file_type
         self.code = code
         self.comments = comments
         self.blanks = blanks
@@ -44,29 +44,35 @@ class ProcessorConfiguration:
         assert configs is not None, "configs can't be None"
         return [ProcessorConfiguration(file_type=lang,
                                        file_extensions=lang_config['extensions'],
-                                    line_comment=lang_config['line_comment'] if 'line_comment' in lang_config else [],
-                                    multiline_comment=lang_config['multi_line'] if 'multi_line' in lang_config else []
+                                       line_comment=lang_config['line_comment'] if 'line_comment' in lang_config else [
+                                       ],
+                                       multiline_comment=lang_config['multi_line'] if 'multi_line' in lang_config else [
+                                       ]
                                        ) for lang, lang_config in configs.items()]
 
 
-class Processor:
-    def __init__(self, config: List[ProcessorConfiguration] = []):
-        configurations = config or [ProcessorConfiguration(file_type='txt',
-                                                           file_extensions=[
-                                                               'txt'],
-                                                           line_comment=["//",],
-                                                           multiline_comment=[])]
-        self.config:Dict[str, ProcessorConfiguration] = {}
-        for c in configurations:
+class ProcessorConfigurationFactory:
+    def __init__(self, configs: List[ProcessorConfiguration]):
+        self.configs: Dict[str, ProcessorConfiguration] = {}
+        for c in configs:
             for ft in c.file_extensions:
-                self.config[ft] = c
-        # self.config = {ft: c [for ft in c.file_extensions] for c in configurations}
+                self.configs[ft] = c
 
-    def process(self, text: Iterable[str], file_extension='txt') -> Report:
+    def get_configuration(self, file_extension: str, or_default: Optional[str] = None) -> Optional[ProcessorConfiguration]:
+        """Returns the configuration for the given file extension if it exists.
+        Fallback to the default configuration provided or None otherwise."""
+        if file_extension in self.configs:
+            return self.configs[file_extension]
+        if or_default is not None:
+            return self.configs.get(or_default, None)
+        return None
+
+
+class Processor:
+
+    def process(self, text: Iterable[str], file_configuration: ProcessorConfiguration) -> Report:
         """Counts the number of words in the given text."""
-        file_configuration = self.config.get(
-            file_extension, self.config['txt'])
-
+        assert file_configuration is not None, "File Configuration can't be null"
         report = Report(file_configuration.file_type)
         in_multi_line_comment = False
         for line in text:
