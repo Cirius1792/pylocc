@@ -13,7 +13,19 @@ This project draws instiparion from [scc](https://github.com/boyter/scc) and use
 *   Provides both aggregated and per-file reports.
 *   Easy to use and configure.
 
+## Requirements
+
+- Python >= 3.10
+
 ## Installation
+
+### From Pypi
+```bash
+ pip install pylocc
+
+ pylocc --help
+ ```
+### From Source
 
 1.  Clone the repository:
     ```bash
@@ -35,7 +47,7 @@ To use `pylocc`, run the following command:
 ```bash
 pylocc [OPTIONS] <file_or_directory>
 ```
-
+or
 ```bash
 uv run pylocc --help
 Usage: pylocc [OPTIONS] FILE
