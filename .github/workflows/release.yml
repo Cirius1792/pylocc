@@ -46,7 +46,9 @@ jobs:
     if: needs.check-release.outputs.should-release == 'true'
     runs-on: ubuntu-latest
     environment: pypi  # Optional: use environment protection
-    
+    permissions:
+      contents: write   
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -100,10 +102,9 @@ jobs:
           echo "New version: $NEW_VERSION"
 
       - name: Commit version bump
-        run: |
-          git add .
-          git commit -m "Bump version to ${{ steps.new-version.outputs.new-version }} [skip ci]" || echo "No changes to commit"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Bump version to ${{ steps.new-version.outputs.new-version }} [skip ci]"
 
       - name: Create git tag
         run: |
