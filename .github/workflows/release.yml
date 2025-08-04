@@ -1,0 +1,138 @@
+name: Publish to PyPI
+
+on:
+  workflow_run:
+    workflows: ["Tests"]  # Replace "Test" with the exact name of your test workflow
+    types:
+      - completed
+    branches: [ main ]
+
+jobs:
+  check-release:
+    runs-on: ubuntu-latest
+    # Only run if the test workflow completed successfully
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    outputs:
+      should-release: ${{ steps.check.outputs.should-release }}
+      version-type: ${{ steps.check.outputs.version-type }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Get triggering commit message
+        id: get-commit
+        run: |
+          COMMIT_SHA="${{ github.event.workflow_run.head_sha }}"
+          COMMIT_MSG=$(git log --format=%B -n 1 $COMMIT_SHA)
+          echo "commit-message=$COMMIT_MSG" >> $GITHUB_OUTPUT
+          echo "Commit message: $COMMIT_MSG"
+      
+      - name: Check commit message for release
+        id: check
+        run: |
+          COMMIT_MSG="${{ steps.get-commit.outputs.commit-message }}"
+          
+          if [[ "$COMMIT_MSG" =~ ^RELEASE\ -\ (major|minor|patch) ]]; then
+            VERSION_TYPE=$(echo "$COMMIT_MSG" | sed -n 's/^RELEASE - \(major\|minor\|patch\).*/\1/p')
+            echo "should-release=true" >> $GITHUB_OUTPUT
+            echo "version-type=$VERSION_TYPE" >> $GITHUB_OUTPUT
+            echo "Release detected: $VERSION_TYPE"
+          else
+            echo "should-release=false" >> $GITHUB_OUTPUT
+            echo "No release pattern found in commit message"
+          fi
+
+  publish:
+    needs: check-release
+    if: needs.check-release.outputs.should-release == 'true'
+    runs-on: ubuntu-latest
+    environment: pypi  # Optional: use environment protection
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for proper versioning
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.workflow_run.head_sha }}  # Checkout the exact commit that triggered tests
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Configure git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Get current version
+        id: current-version
+        run: |
+          CURRENT_VERSION=$(uv tree --depth 0 | grep "^[^├└│ ]" | head -1 | sed 's/.*v\([0-9.]*\).*/\1/' || echo "0.0.0")
+          echo "current-version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "Current version: $CURRENT_VERSION"
+
+      - name: Update version
+        run: |
+          VERSION_TYPE="${{ needs.check-release.outputs.version-type }}"
+          echo "Updating version with type: $VERSION_TYPE"
+          
+          # Use uv to bump version
+          case $VERSION_TYPE in
+            major)
+              uv version --bump major
+              ;;
+            minor)
+              uv version --bump minor
+              ;;
+            patch)
+              uv version --bump patch
+              ;;
+          esac
+
+      - name: Get new version
+        id: new-version
+        run: |
+          NEW_VERSION=$(uv tree --depth 0 | grep "^[^├└│ ]" | head -1 | sed 's/.*v\([0-9.]*\).*/\1/')
+          echo "new-version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "New version: $NEW_VERSION"
+
+      - name: Commit version bump
+        run: |
+          git add .
+          git commit -m "Bump version to ${{ steps.new-version.outputs.new-version }} [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Create git tag
+        run: |
+          git tag "v${{ steps.new-version.outputs.new-version }}"
+          git push origin "v${{ steps.new-version.outputs.new-version }}"
+
+      - name: Build package
+        run: |
+          uv build
+
+      - name: Publish to PyPI
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          uv publish
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.new-version.outputs.new-version }}
+          release_name: Release v${{ steps.new-version.outputs.new-version }}
+          body: |
+            ## Changes
+            
+            Automated release triggered by commit: ${{ steps.get-commit.outputs.commit-message }}
+            
+            Version bump: ${{ needs.check-release.outputs.version-type }}
+            
+          draft: false
+          prerelease: false
