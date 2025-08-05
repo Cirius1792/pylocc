@@ -22,7 +22,7 @@ def test_prepare_by_file_report(sample_reports):
     report_data = prepare_by_file_report(sample_reports)
     assert isinstance(report_data, ReportData)
     assert len(report_data.rows) == 3
-    assert report_data.headers == ["Provider", "Lines", "Code", "Comments", "Blanks"]
+    assert report_data.headers == ["Provider", "File Name", "Lines", "Code", "Comments", "Blanks"]
 
 def test_create_by_file_table(sample_reports):
     report_data = prepare_by_file_report(sample_reports)
@@ -50,7 +50,7 @@ def test_report_data_to_csv(tmp_path, sample_reports):
     with open(file_path, 'r') as csvfile:
         reader = csv.reader(csvfile)
         header = next(reader)
-        assert header == ["Provider", "Lines", "Code", "Comments", "Blanks"]
+        assert header == ["Provider", "File Name", "Lines", "Code", "Comments", "Blanks"]
         rows = list(reader)
         assert len(rows) == 3
-        assert rows[0] == ["file1.py", "15", "10", "2", "3"]
+        assert rows[0] == ["file1.py", "file1", "15", "10", "2", "3"]

@@ -1,3 +1,4 @@
+import os
 from typing import Dict, List
 from pylocc.processor import Report
 from rich.table import Table
@@ -6,6 +7,7 @@ import csv
 # Headers
 FILE_TYPE_HEADER = "Language"
 FILE_PATH_HEADER = "Provider"
+FILE_NAME_HEADER = "File Name"
 NUM_FILE_HEADER = "Files"
 TOTAL_LINE_HEADER = "Lines"
 CODE_LINE_HEADER = "Code"
@@ -24,11 +26,13 @@ class ReportData:
             writer.writerows(self.rows)
 
 def prepare_by_file_report(processed: Dict[str, Report]) -> ReportData:
-    headers = [FILE_PATH_HEADER, TOTAL_LINE_HEADER, CODE_LINE_HEADER, COMMENT_LINE_HEADER, BLANK_LINE_HEADER]
+    headers = [FILE_PATH_HEADER, FILE_NAME_HEADER, TOTAL_LINE_HEADER, CODE_LINE_HEADER, COMMENT_LINE_HEADER, BLANK_LINE_HEADER]
     rows = []
     for file_path, report_data in processed.items():
+        file_name = os.path.basename(os.path.splitext(file_path)[0])
         rows.append([
             file_path,
+            file_name,
             str(report_data.total),
             str(report_data.code),
             str(report_data.comments),
@@ -39,7 +43,7 @@ def prepare_by_file_report(processed: Dict[str, Report]) -> ReportData:
 def create_by_file_table(report_data: ReportData) -> Table:
     report = Table(show_header=True, header_style="bold magenta")
     for header in report_data.headers:
-        report.add_column(header, justify="right" if header != FILE_PATH_HEADER else "dim")
+        report.add_column(header, justify="right" if header not in [FILE_PATH_HEADER, FILE_NAME_HEADER] else "dim")
 
     for row in report_data.rows:
         report.add_row(*row)
