@@ -5,7 +5,7 @@ from rich.console import Console
 
 from pylocc.file_utils import get_all_file_paths
 from pylocc.processor import Processor, ProcessorConfiguration, ProcessorConfigurationFactory
-from pylocc.reporter import report_aggregate, report_by_file
+from pylocc.reporter import aggregate_reports, create_aggregate_table, prepare_by_file_report, create_by_file_table
 
 import importlib.metadata
 
@@ -17,18 +17,12 @@ def load_language_config() -> List[ProcessorConfiguration]:
     from importlib import resources
 
     try:
-        # Use importlib.resources to access the file
         with resources.files('pylocc').joinpath('language.json').open('r', encoding='utf-8') as f:
             config_data = json.load(f)
         return ProcessorConfiguration.load_from_dict(config_data)
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        # Handle potential errors during file loading or parsing
         click.echo(f"Error loading language configuration: {e}", err=True)
         raise click.Abort()
-
-
-
-
 
 @click.command()
 @click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True), required=False)
@@ -65,7 +59,6 @@ def pylocc(file, by_file, output):
                 continue
 
             with open(f, 'r', encoding='utf-8', errors='ignore', buffering=8192) as f_handle:
-                # content = f_handle.readlines()
                 report = processor.process(
                     f_handle, file_configuration=file_configuration)
                 per_file_reports[f] = report
@@ -74,13 +67,19 @@ def pylocc(file, by_file, output):
             continue
     if per_file_reports:
         console = Console()
-        report_table = None
+        report_data = None
         if by_file:
-            report_table = report_by_file(per_file_reports)
+            report_data = prepare_by_file_report(per_file_reports)
+            report_table = create_by_file_table(report_data)
         else:
-            report_table = report_aggregate(per_file_reports)
-        console.print(report_table)
-
+            report_data = aggregate_reports(per_file_reports)
+            report_table = create_aggregate_table(report_data)
+        
+        if output:
+            report_data.to_csv(output)
+            console.print(f"Report saved to {output}")
+        else:
+            console.print(report_table)
 
 if __name__ == '__main__':
     pylocc()
