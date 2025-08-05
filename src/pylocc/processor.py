@@ -83,7 +83,8 @@ class Processor:
         assert file_configuration is not None, "File Configuration can't be null"
         report = Report(file_configuration.file_type)
         in_multi_line_comment = False
-        for line in text:
+        max = 0
+        for i, line in enumerate(text):
             stripped_line = line.lstrip()
             if not stripped_line:
                 # If the line is blank it's easy
@@ -101,6 +102,8 @@ class Processor:
                 in_multi_line_comment = not stripped_line.endswith(
                     file_configuration.multiline_comment[0][1])
                 report.increment_comments()
-            else:
-                report.increment_code()
+            max = i
+        # Since we incremented the counters only for blanks and comments, the difference between the total number of lines and comments+blanks will be the code.
+        # Doing so we avoid to increment every time the code lines and we can do it only once
+        report.increment_code(max + 1 - report.total)
         return report
