@@ -1,12 +1,15 @@
 import os
 from typing import List
 import click
-from pathlib import Path
 from rich.console import Console
 
+from pylocc.file_utils import get_all_file_paths
 from pylocc.processor import Processor, ProcessorConfiguration, ProcessorConfigurationFactory
 from pylocc.reporter import report_aggregate, report_by_file
 
+import importlib.metadata
+
+__version__ = importlib.metadata.version('pylocc')
 
 def load_language_config() -> List[ProcessorConfiguration]:
     """Load language configurations from the packaged JSON file."""
@@ -24,40 +27,8 @@ def load_language_config() -> List[ProcessorConfiguration]:
         raise click.Abort()
 
 
-def get_all_file_paths_pathlib(folder: str, supported_extensions: List[str] = []) -> List[str]:
-    """
-    Returns a list of all file paths using pathlib (more modern approach).
-
-    Args:
-        folder (str): Path to the root folder to search
-
-    Returns:
-        List[str]: List of absolute file paths as strings
-    """
-    folder_path = Path(folder)
-
-    if not folder_path.exists():
-        raise FileNotFoundError(f"The path '{folder_path}' does not exist")
-    if not folder_path.is_dir():
-        raise NotADirectoryError(
-            f"The path '{folder_path}' is not a directory")
-
-    # Use rglob to recursively find all files
-    file_paths = [str(file.resolve())
-                  for file in folder_path.rglob('*') if file.is_file()]
-
-    # Filter by supported extensions if provided
-    if supported_extensions:
-        extensions_set = set(supported_extensions)
-        file_paths = [file for file in file_paths if Path(
-            file).suffix[1:] in extensions_set]
-
-    return file_paths
 
 
-import importlib.metadata
-
-__version__ = importlib.metadata.version('pylocc')
 
 @click.command()
 @click.argument('file', type=click.Path(exists=True, dir_okay=True, readable=True), required=False)
@@ -75,7 +46,7 @@ def pylocc(file, by_file, output):
     configuration_factory = ProcessorConfigurationFactory(configs)
 
     if os.path.isdir(file):
-        files = get_all_file_paths_pathlib(
+        files = get_all_file_paths(
             file, supported_extensions=supported_extensions)
     else:
         files = [file]
