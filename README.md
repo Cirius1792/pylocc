@@ -112,4 +112,3 @@ Each language entry in `language.json` has the following structure:
 ## Contributing
 
 Contributions are welcome! Please feel free to open an issue or submit a pull request.
-
