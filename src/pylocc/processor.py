@@ -84,7 +84,7 @@ class Processor:
         report = Report(file_configuration.file_type)
         in_multi_line_comment = False
         for line in text:
-            stripped_line = line.strip()
+            stripped_line = line.lstrip()
             if not stripped_line:
                 # If the line is blank it's easy
                 report.increment_blanks()

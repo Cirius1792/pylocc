@@ -73,10 +73,9 @@ def test_get_all_file_paths_empty_directory(create_test_files):
     assert len(files) == 0
 
 def test_get_all_file_paths_nonexistent_path():
-    # After refactoring the get_all_file_paths funciton to return an iterator with yield this test is failing, can you please have a look at it? you can run the tests using the command uv run pytest AI!
     # Test with a path that does not exist
     with pytest.raises(FileNotFoundError):
-        get_all_file_paths("non_existent_dir")
+        list(get_all_file_paths("non_existent_dir"))
 
 def test_get_all_file_paths_with_file_path(create_test_files):
     test_dir, _ = create_test_files
@@ -84,7 +83,7 @@ def test_get_all_file_paths_with_file_path(create_test_files):
     
     # Test with a path that is a file, not a directory
     with pytest.raises(NotADirectoryError):
-        get_all_file_paths(file_path)
+        list(get_all_file_paths(file_path))
 
 def test_get_all_file_paths_no_matching_extensions(create_test_files):
     test_dir, _ = create_test_files

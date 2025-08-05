@@ -33,4 +33,5 @@ dev = [
     "coverage-badge>=1.1.2",
     "pytest>=8.4.1",
     "pytest-cov>=6.2.1",
+    "snakeviz>=2.2.2",
 ]

@@ -55,19 +55,20 @@ def pylocc(file, by_file, output):
     per_file_reports = {}
     for f in files:
         try:
-            with open(f, 'r', encoding='utf-8', errors='ignore') as f_handle:
-                content = f_handle.readlines()
             file_extension = os.path.splitext(f)[1][1:]
             file_configuration = configuration_factory.get_configuration(
-                file_extension)
-            if file_configuration:
-                report = processor.process(
-                    content, file_configuration=file_configuration)
-                per_file_reports[f] = report
-            else:
+                    file_extension)
+
+            if not file_configuration:
                 click.echo(
                     f"No configuration found for file type '{file_extension}' in file {f}. Skipping...")
                 continue
+
+            with open(f, 'r', encoding='utf-8', errors='ignore', buffering=8192) as f_handle:
+                # content = f_handle.readlines()
+                report = processor.process(
+                    f_handle, file_configuration=file_configuration)
+                per_file_reports[f] = report
         except Exception as e:
             click.echo(f"Error processing file {f}: {e} Skipping...")
             continue
