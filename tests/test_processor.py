@@ -82,7 +82,7 @@ class TestProcessor(TestCase):
 class TestProcessorConfiguration(TestCase):
     def setUp(self):
         import json
-        with open(r"./test/test_language.json", 'r') as f:
+        with open(r"./tests/test_language.json", 'r') as f:
             self.config_data: Dict[str, Dict] = json.load(f)
 
     def test_should_load_config_from_json(self):
