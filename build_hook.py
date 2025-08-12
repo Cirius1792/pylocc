@@ -3,7 +3,11 @@ import re
 from hatchling.builders.hooks.plugin.interface import BuildHookInterface
 
 def sanitize_name(name):
-    # Replace invalid characters with underscore
+    # Replace invalid characters with words
+    name = name.replace('#', 'SHARP')
+    name = name.replace('*', 'STAR')
+    name = name.replace('+', 'PLUS')
+    # Replace any remaining non-alphanumeric characters with underscore
     name = re.sub(r'[^a-zA-Z0-9_]', '_', name)
     # Prepend underscore if it starts with a digit
     if name[0].isdigit():
