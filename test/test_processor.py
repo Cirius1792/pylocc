@@ -1,7 +1,7 @@
 from unittest import TestCase
 from typing import Dict
 
-from pylocc.processor import Processor, ProcessorConfiguration
+from pylocc.processor import ProcessorConfiguration, count_locs
 
 
 class TestProcessor(TestCase):
@@ -18,16 +18,15 @@ class TestProcessor(TestCase):
             line_comment=["--"],
             multiline_comment=[]
         )
-        self.processor = Processor()
 
     def test_should_count_code_lines(self):
         text = ["line 1", "line 2", "line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.code, 3)
 
     def test_should_count_commented_lines(self):
         text = ["line 1", "line 2", "line 3", r"//Commented Line"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.comments, 1)
 
     def test_should_count_multi_lines_comments(self):
@@ -35,46 +34,46 @@ class TestProcessor(TestCase):
                 "/* at line 2 the comment begins",
                 "line 3",
                 r"at line 4 the comment ends */"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.code, 1)
         self.assertEqual(report.comments, 3)
         self.assertEqual(report.total, 4)
 
     def test_should_count_blank_lines(self):
         text = ["line 1", "", "line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.code, 2)
 
         text = ["line 1", "    ", "line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.code, 2)
 
     def test_should_count_total_lines_in_file(self):
         text = ["line 1", "line 2", "line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.total, 3)
 
         text = ["line 1", "", "line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.total, 3)
 
         text = ["line 1", "", "//line 3"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.total, 3)
 
     def test_should_count_comments_lines_according_to_the_file_type(self):
         text = ["line 1", "line 2", "line 3", r"//Commented Line"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.comments, 1)
 
         text = ["line 1", "line 2", "line 3", r"-- Commented Line"]
-        report = self.processor.process(text, file_configuration=self.sql_config)
+        report = count_locs(text, file_configuration=self.sql_config)
         self.assertEqual(report.comments, 1)
 
     def test_should_count_as_code_lines_not_totally_commented(self):
         text = ["line 1", "line 2", "line 3",
                 r"there is code here // Comment"]
-        report = self.processor.process(text, file_configuration=self.text_config)
+        report = count_locs(text, file_configuration=self.text_config)
         self.assertEqual(report.code, 4)
         self.assertEqual(report.comments, 0)
 

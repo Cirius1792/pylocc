@@ -52,6 +52,16 @@ class ProcessorConfiguration:
                                        ) for lang, lang_config in configs.items()]
 
 
+def load_default_language_config() -> List[ProcessorConfiguration]:
+    """Load language configurations from the packaged JSON file."""
+    import json
+    from importlib import resources
+
+    with resources.files('pylocc').joinpath('language.json').open('r', encoding='utf-8') as f:
+        config_data = json.load(f)
+    return ProcessorConfiguration.load_from_dict(config_data)
+
+
 class ProcessorConfigurationFactory:
     def __init__(self, configs: List[ProcessorConfiguration]):
         self.configs: Dict[str, ProcessorConfiguration] = {}
@@ -75,35 +85,39 @@ class ProcessorConfigurationFactory:
             return self.configs.get(or_default, None)
         return None
 
+    @staticmethod
+    def get_default_factory() -> 'ProcessorConfigurationFactory':
+        """Returns a default configuration factory with the built-in language configurations."""
+        return ProcessorConfigurationFactory(load_default_language_config())
 
-class Processor:
 
-    def process(self, text: Iterable[str], file_configuration: ProcessorConfiguration) -> Report:
-        """Counts the number of lines in the given text according to the provide configuration."""
-        assert file_configuration is not None, "File Configuration can't be null"
-        report = Report(file_configuration.file_type)
-        in_multi_line_comment = False
-        max = 0
-        for i, line in enumerate(text):
-            stripped_line = line.lstrip()
-            if not stripped_line:
-                # If the line is blank it's easy
-                report.increment_blanks()
-            elif file_configuration.line_comment and stripped_line.startswith(file_configuration.line_comment[0]):
-                # If the line is not blank, it can contains code, comments or both, if the comment is after a valid code block,
-                # therefore we only check for the comment line pattern at the beginning of the line.
-                # Even if the line may contains the line comment pattern after the code block, we still want to count this line as a code one.
-                report.increment_comments()
-            elif file_configuration.multiline_comment and \
-                    (in_multi_line_comment or
-                     stripped_line.startswith(file_configuration.multiline_comment[0][0])):
-                # If the line begins with the multiline comment start pattern, we are entering a commented block and until the termination
-                # pattern, we will continue incrementing the commented line counter
-                in_multi_line_comment = not stripped_line.endswith(
-                    file_configuration.multiline_comment[0][1])
-                report.increment_comments()
-            max = i
-        # Since we incremented the counters only for blanks and comments, the difference between the total number of lines and comments+blanks will be the code.
-        # Doing so we avoid to increment every time the code lines and we can do it only once
-        report.increment_code(max + 1 - report.total)
-        return report
+
+def count_locs(text: Iterable[str], file_configuration: ProcessorConfiguration) -> Report:
+    """Counts the number of lines in the given text according to the provide configuration."""
+    assert file_configuration is not None, "File Configuration can't be null"
+    report = Report(file_configuration.file_type)
+    in_multi_line_comment = False
+    max = 0
+    for i, line in enumerate(text):
+        stripped_line = line.lstrip()
+        if not stripped_line:
+            # If the line is blank it's easy
+            report.increment_blanks()
+        elif file_configuration.line_comment and stripped_line.startswith(file_configuration.line_comment[0]):
+            # If the line is not blank, it can contains code, comments or both, if the comment is after a valid code block,
+            # therefore we only check for the comment line pattern at the beginning of the line.
+            # Even if the line may contains the line comment pattern after the code block, we still want to count this line as a code one.
+            report.increment_comments()
+        elif file_configuration.multiline_comment and \
+                (in_multi_line_comment or
+                 stripped_line.startswith(file_configuration.multiline_comment[0][0])):
+            # If the line begins with the multiline comment start pattern, we are entering a commented block and until the termination
+            # pattern, we will continue incrementing the commented line counter
+            in_multi_line_comment = not stripped_line.endswith(
+                file_configuration.multiline_comment[0][1])
+            report.increment_comments()
+        max = i
+    # Since we incremented the counters only for blanks and comments, the difference between the total number of lines and comments+blanks will be the code.
+    # Doing so we avoid to increment every time the code lines and we can do it only once
+    report.increment_code(max + 1 - report.total)
+    return report

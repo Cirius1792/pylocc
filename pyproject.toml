@@ -28,6 +28,9 @@ pylocc = "pylocc:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.hooks.custom]
+path = "build_hook.py"
+
 [dependency-groups]
 dev = [
     "coverage-badge>=1.1.2",
