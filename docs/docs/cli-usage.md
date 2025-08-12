@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Usage
+# CLI Usage
 
 To use `pylocc`, run the following command:
 
