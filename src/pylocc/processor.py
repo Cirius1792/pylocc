@@ -1,11 +1,12 @@
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple, Iterable
+from pylocc.language import Language
 
 
 class Report:
     __slots__ = ['file_type', 'code', 'comments', 'blanks']
 
-    def __init__(self, file_type, code: int = 0, comments: int = 0, blanks: int = 0):
+    def __init__(self, file_type: Language, code: int = 0, comments: int = 0, blanks: int = 0):
         self.file_type = file_type
         self.code = code
         self.comments = comments
@@ -34,7 +35,7 @@ class ProcessorConfiguration:
     """Language Configuration for the loc counter processor.
     Defines the characteristics of the code that will be used to process the code files,
     such as what makes a line comment or a multi line comment"""
-    file_type: str
+    file_type: Language
     file_extensions: List[str]
     line_comment: List[str]
     multiline_comment: List[Tuple[str, str]]
@@ -43,13 +44,13 @@ class ProcessorConfiguration:
     def load_from_dict(configs) -> List['ProcessorConfiguration']:
         """Loads the processor configurations from a dictionary."""
         assert configs is not None, "configs can't be None"
-        return [ProcessorConfiguration(file_type=lang,
+        return [ProcessorConfiguration(file_type=Language(lang),
                                        file_extensions=lang_config['extensions'],
                                        line_comment=lang_config['line_comment'] if 'line_comment' in lang_config else [
-                                       ],
-                                       multiline_comment=lang_config['multi_line'] if 'multi_line' in lang_config else [
-                                       ]
-                                       ) for lang, lang_config in configs.items()]
+        ],
+            multiline_comment=lang_config['multi_line'] if 'multi_line' in lang_config else [
+        ]
+        ) for lang, lang_config in configs.items()]
 
 
 def load_default_language_config() -> List[ProcessorConfiguration]:
@@ -63,33 +64,49 @@ def load_default_language_config() -> List[ProcessorConfiguration]:
 
 
 class ProcessorConfigurationFactory:
-    def __init__(self, configs: List[ProcessorConfiguration]):
-        self.configs: Dict[str, ProcessorConfiguration] = {}
-        for c in configs:
-            for ft in c.file_extensions:
-                self.configs[ft] = c
 
-    def get_configuration(self, file_extension: str, or_default: Optional[str] = None) -> Optional[ProcessorConfiguration]:
-        """Returns the configuration for the given file extension if it exists.
+    def __init__(self, configs: List[ProcessorConfiguration]):
+        self.configs_per_extension: Dict[str, ProcessorConfiguration] = {}
+        if configs:
+            for c in configs:
+                if c:
+                    for ft in c.file_extensions:
+                        self.configs_per_extension[ft] = c
+        self.configs_per_language: Dict[Language, ProcessorConfiguration] = {}
+        if configs:
+            for c in configs:
+                if c:
+                    self.configs_per_language[Language(c.file_type)] = c
+
+    def get_configuration(self, file_type: Optional[Language] = None, file_extension: Optional[str] = None, or_default: Optional[str] = None) -> Optional[ProcessorConfiguration]:
+        """Returns the configuration for the given language or file extension if it exists.
         Fallback to the default configuration provided or None otherwise.
+
+        Only one of the parameters must be provided, if both are provided, an assertion error will be raised.
+
         Args:
+            language: Language to look for in the configurations.
             file_extension (str): The file extension to look for.
             or_default (Optional[str]): The default configuration to return if the file extension is not found.
         Returns:
-            Optional[ProcessorConfiguration]: The configuration for the file extension or the default configuration.
+            Optional[ProcessorConfiguration]: The configuration for the file extension or the default configuration if provided. None otherwise.
 
         """
-        if file_extension in self.configs:
-            return self.configs[file_extension]
-        if or_default is not None:
-            return self.configs.get(or_default, None)
-        return None
+        assert (file_type is not None) ^ (
+            file_extension is not None), "Either language or file_extension must be provided, but not both"
+        config = None
+        if file_type in self.configs_per_language:
+            config = self.configs_per_language[file_type]
+        elif file_extension in self.configs_per_extension:
+            config = self.configs_per_extension[file_extension]
+        elif or_default is not None:
+            config = self.configs_per_extension.get(or_default, None)
+        return config
 
     @staticmethod
     def get_default_factory() -> 'ProcessorConfigurationFactory':
         """Returns a default configuration factory with the built-in language configurations."""
         return ProcessorConfigurationFactory(load_default_language_config())
-
 
 
 def count_locs(text: Iterable[str], file_configuration: ProcessorConfiguration) -> Report:

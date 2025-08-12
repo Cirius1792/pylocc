@@ -1,6 +1,5 @@
 import unittest
 import os
-from unittest.mock import patch, MagicMock
 from click.testing import CliRunner
 from pylocc.cli import pylocc
 
@@ -50,5 +49,4 @@ class TestCli(unittest.TestCase):
             self.assertIn('Provider', result.output)
 
 if __name__ == '__main__':
-    import os
     unittest.main()

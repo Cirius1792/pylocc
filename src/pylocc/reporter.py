@@ -72,7 +72,7 @@ def aggregate_reports(processed: Dict[str, Report]) -> ReportData:
 
     for file_type, report_data in aggregated_report.items():
         rows.append([
-            file_type,
+            str(file_type),
             f"{files_per_type[file_type]:,}",
             f"{report_data.total:,}",
             f"{report_data.code:,}",

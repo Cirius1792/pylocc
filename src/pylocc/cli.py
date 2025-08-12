@@ -27,8 +27,9 @@ def pylocc(file, by_file, output):
     configuration_factory = ProcessorConfigurationFactory(configs)
 
     if os.path.isdir(file):
-        files = get_all_file_paths(
+        files_gen = get_all_file_paths(
             file, supported_extensions=supported_extensions)
+        files = list(files_gen)
     else:
         files = [file]
 
@@ -37,7 +38,7 @@ def pylocc(file, by_file, output):
         try:
             file_extension = os.path.splitext(f)[1][1:]
             file_configuration = configuration_factory.get_configuration(
-                file_extension)
+                file_extension=file_extension)
 
             if not file_configuration:
                 click.echo(
