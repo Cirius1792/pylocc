@@ -8,44 +8,53 @@ on:
         required: true
         default: 'patch'
         type: choice
-        options:
-        - patch
-        - minor
-        - major
+        options: [patch, minor, major]
   workflow_run:
-    workflows: ["Tests"]  
-    types:
-      - completed
-    branches: [ main ]
+    workflows: ["Tests"]
+    types: [completed]
+    branches: [main]
 
 jobs:
-  test:
-    uses: ./.github/workflows/test-workflow.yml
-    permissions:
-      actions: write # Required to upload artifacts
-
   check-release:
-    needs: test
+    # For workflow_run, ensure tests succeeded. For workflow_dispatch, always allow.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     outputs:
       should-release: ${{ steps.check.outputs.should-release }}
       version-type: ${{ steps.check.outputs.version-type }}
+      commit-sha: ${{ steps.get-commit.outputs.commit-sha }}
+      commit-message: ${{ steps.get-commit.outputs.commit-message }}
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Resolve target commit
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "sha=${{ github.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "sha=${{ github.event.workflow_run.head_sha }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Get triggering commit message
         id: get-commit
         run: |
-          COMMIT_SHA="${{ github.event.workflow_run.head_sha }}"
-          COMMIT_MSG=$(git log --format=%B -n 1 $COMMIT_SHA)
+          COMMIT_SHA="${{ steps.resolve.outputs.sha }}"
+          COMMIT_MSG=$(git log --format=%B -n 1 "$COMMIT_SHA")
+          echo "commit-sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
           echo "commit-message=$COMMIT_MSG" >> $GITHUB_OUTPUT
           echo "Commit message: $COMMIT_MSG"
-      
-      - name: Check commit message for release
+
+      - name: Determine release parameters
         id: check
         run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should-release=true" >> $GITHUB_OUTPUT
+            echo "version-type=${{ github.event.inputs.logLevel }}" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
           COMMIT_MSG="${{ steps.get-commit.outputs.commit-message }}"
-          
           if [[ "$COMMIT_MSG" =~ ^RELEASE\ -\ (major|minor|patch) ]]; then
             VERSION_TYPE=$(echo "$COMMIT_MSG" | sed -n 's/^RELEASE - \(major\|minor\|patch\).*/\1/p')
             echo "should-release=true" >> $GITHUB_OUTPUT
@@ -64,7 +73,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ needs.check-release.outputs.commit-sha }}
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
@@ -152,19 +161,13 @@ jobs:
     permissions:
       contents: write   
       id-token: write
-    if: needs.check-release.outputs.should-release == 'true'
-    runs-on: ubuntu-latest
-    environment: pypi  # Optional: use environment protection
-    permissions:
-      contents: write   
-      id-token: write
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch full history for proper versioning
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.workflow_run.head_sha }}  # Checkout the exact commit that triggered tests
+          ref: ${{ needs.check-release.outputs.commit-sha }}  # Checkout the exact commit that triggered tests
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
@@ -240,7 +243,7 @@ jobs:
           body: |
             ## Changes
             
-            Automated release triggered by commit: ${{ steps.get-commit.outputs.commit-message }}
+            Automated release triggered by commit: ${{ needs.check-release.outputs.commit-message }}
             
             Version bump: ${{ needs.check-release.outputs.version-type }}
             
