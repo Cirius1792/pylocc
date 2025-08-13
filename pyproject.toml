@@ -31,6 +31,13 @@ build-backend = "hatchling.build"
 [tool.hatch.build.hooks.custom]
 path = "build_hook.py"
 
+# Ensure non-Python resources are included in builds (wheel + sdist)
+[tool.hatch.build]
+include = [
+  "src/pylocc/language.json",
+  "src/pylocc/language.py",
+]
+
 [dependency-groups]
 dev = [
     "coverage-badge>=1.1.2",
