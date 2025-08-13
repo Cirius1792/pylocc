@@ -128,6 +128,72 @@ jobs:
         run: |
           uv build
 
+      - name: Smoke test built wheel imports
+        shell: bash
+        run: |
+          python -m venv .venv_smoke
+          source .venv_smoke/bin/activate
+          python -m pip install --upgrade pip
+          pip install dist/*.whl
+          python - << 'PY'
+          import sys
+          print('Python:', sys.version)
+          # Core imports
+          import pylocc
+          from pylocc.cli import pylocc as cli_entry
+          from pylocc.language import Language
+          from pylocc.processor import ProcessorConfigurationFactory, load_default_language_config, count_locs
+          from pylocc.reporter import aggregate_reports, prepare_by_file_report
+          from pylocc.file_utils import get_all_file_paths
+
+          # Basic checks
+          assert hasattr(Language, 'PYTHON'), 'Language enum missing PYTHON member'
+          configs = load_default_language_config()
+          assert configs, 'No language configurations loaded'
+          factory = ProcessorConfigurationFactory(configs)
+          cfg = factory.get_configuration(file_type=Language.PYTHON)
+          assert cfg is not None, 'No configuration found for PYTHON'
+
+          # Minimal counting sanity check
+          text = ['# comment\n', '\n', "print('hi')\n"]
+          report = count_locs(text, cfg)
+          assert report.comments >= 1 and report.blanks >= 1 and report.code >= 1, 'Unexpected LOC counts'
+          print('Smoke test passed: imports and basic count OK')
+          PY
+
+      - name: Smoke test sdist imports
+        shell: bash
+        run: |
+          python -m venv .venv_smoke_sdist
+          source .venv_smoke_sdist/bin/activate
+          python -m pip install --upgrade pip
+          pip install dist/*.tar.gz
+          python - << 'PY'
+          import sys
+          print('Python:', sys.version)
+          # Core imports
+          import pylocc
+          from pylocc.cli import pylocc as cli_entry
+          from pylocc.language import Language
+          from pylocc.processor import ProcessorConfigurationFactory, load_default_language_config, count_locs
+          from pylocc.reporter import aggregate_reports, prepare_by_file_report
+          from pylocc.file_utils import get_all_file_paths
+
+          # Basic checks
+          assert hasattr(Language, 'PYTHON'), 'Language enum missing PYTHON member (sdist)'
+          configs = load_default_language_config()
+          assert configs, 'No language configurations loaded (sdist)'
+          factory = ProcessorConfigurationFactory(configs)
+          cfg = factory.get_configuration(file_type=Language.PYTHON)
+          assert cfg is not None, 'No configuration found for PYTHON (sdist)'
+
+          # Minimal counting sanity check
+          text = ['# comment\n', '\n', "print('hi')\n"]
+          report = count_locs(text, cfg)
+          assert report.comments >= 1 and report.blanks >= 1 and report.code >= 1, 'Unexpected LOC counts (sdist)'
+          print('Smoke test (sdist) passed: imports and basic count OK')
+          PY
+
       - name: Publish to PyPI
         run: |
           uv publish --trusted-publishing always
