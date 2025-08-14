@@ -26,11 +26,12 @@ class ReportData:
             writer.writerows(self.rows)
 
 def prepare_by_file_report(processed: Dict[str, Report]) -> ReportData:
-    headers = [FILE_PATH_HEADER, FILE_NAME_HEADER, TOTAL_LINE_HEADER, CODE_LINE_HEADER, COMMENT_LINE_HEADER, BLANK_LINE_HEADER]
+    headers = [FILE_TYPE_HEADER, FILE_PATH_HEADER, FILE_NAME_HEADER, TOTAL_LINE_HEADER, CODE_LINE_HEADER, COMMENT_LINE_HEADER, BLANK_LINE_HEADER]
     rows = []
     for file_path, report_data in processed.items():
         file_name = os.path.basename(os.path.splitext(file_path)[0])
         rows.append([
+            report_data.file_type.value,
             file_path,
             file_name,
             str(report_data.total),
@@ -72,7 +73,7 @@ def aggregate_reports(processed: Dict[str, Report]) -> ReportData:
 
     for file_type, report_data in aggregated_report.items():
         rows.append([
-            str(file_type),
+            file_type.value,
             f"{files_per_type[file_type]:,}",
             f"{report_data.total:,}",
             f"{report_data.code:,}",
