@@ -8171,5 +8171,17 @@
         "start": "」」"
       }
     ]
+  },
+  "RPG": {
+    "complexitychecks": [
+      "if ",
+      "if(",
+      "while ",
+      "else "
+    ],
+    "extensions": ["rpg", "rpgle", "cl", "mbr"],
+    "line_comment": ["*"],
+    "multi_line": [],
+    "quotes": []
   }
 }
