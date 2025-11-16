@@ -2,6 +2,16 @@ name: Reusable Test Workflow
 
 on:
   workflow_call:
+    inputs:
+      collect-coverage:
+        description: "Collect and upload coverage data"
+        required: false
+        type: boolean
+        default: true
+      checkout-ref:
+        description: "Git ref to checkout"
+        required: false
+        type: string
 
 jobs:
   test:
@@ -13,6 +23,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.checkout-ref != '' && inputs.checkout-ref || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -23,10 +35,17 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Run tests
-        run: uv sync --locked --all-extras --dev  && uv run pytest --cov -q
+        shell: bash
+        run: |
+          uv sync --locked --all-extras --dev
+          if [ "${{ inputs.collect-coverage }}" = "true" ]; then
+            uv run pytest --cov=cbl_stack -q
+          else
+            uv run pytest -q
+          fi
 
       - name: Upload coverage data
-        if: ${{ matrix.python-version == '3.13' }}
+        if: ${{ inputs.collect-coverage && matrix.python-version == '3.13' }}
         uses: actions/upload-artifact@v4
         with:
           include-hidden-files: true
