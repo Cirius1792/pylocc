@@ -153,8 +153,18 @@ jobs:
           print('Smoke test (sdist) passed: imports and basic count OK')
           PY
 
+  build-executable:
+    name: Build Windows executable
+    needs: check-release
+    if: needs.check-release.outputs.should-release == 'true'
+    uses: ./.github/workflows/build_exe.yml
+    with:
+      source_ref: ${{ needs.check-release.outputs.commit-sha }}
+    secrets: inherit
+
   publish:
-    needs: [check-release, smoke-test]
+    needs: [check-release, smoke-test, build-executable]
+
     if: needs.check-release.outputs.should-release == 'true'
     runs-on: ubuntu-latest
     environment: pypi  # Optional: use environment protection
@@ -233,7 +243,14 @@ jobs:
         run: |
           uv publish --trusted-publishing always
 
+      - name: Download Windows executable artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build-executable.outputs.artifact_name }}
+          path: release-assets
+
       - name: Create GitHub Release
+        id: create-release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -249,3 +266,14 @@ jobs:
             
           draft: false
           prerelease: false
+
+      - name: Upload Windows executable asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: release-assets/${{ needs.build-executable.outputs.zip_filename }}
+          asset_name: ${{ needs.build-executable.outputs.zip_filename }}
+          asset_content_type: application/zip
+

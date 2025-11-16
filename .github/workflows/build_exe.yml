@@ -1,0 +1,170 @@
+name: Build EXE
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Git ref (branch or commit) to build from"
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      source_ref:
+        description: "Git ref (branch or commit) to build from"
+        required: true
+        type: string
+    outputs:
+      version:
+        description: "Detected project version"
+        value: ${{ jobs.prepare.outputs.version }}
+      artifact_name:
+        description: "Name of the uploaded executable artifact"
+        value: ${{ jobs.prepare.outputs.artifact_name }}
+      zip_filename:
+        description: "Zip filename generated for the executable"
+        value: ${{ jobs.prepare.outputs.zip_filename }}
+      exe_filename:
+        description: "Executable filename generated during the build"
+        value: ${{ jobs.prepare.outputs.exe_filename }}
+      safe_ref:
+        description: "Sanitized reference used in artifact naming"
+        value: ${{ jobs.prepare.outputs.safe_ref }}
+    secrets:
+      GITHUB_TOKEN:
+        required: false
+
+jobs:
+  prepare:
+    name: Prepare build metadata
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.metadata.outputs.version }}
+      safe_ref: ${{ steps.metadata.outputs.safe_ref }}
+      artifact_name: ${{ steps.metadata.outputs.artifact_name }}
+      exe_filename: ${{ steps.metadata.outputs.exe_filename }}
+      zip_filename: ${{ steps.metadata.outputs.zip_filename }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref }}
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Determine build metadata
+        id: metadata
+        env:
+          SOURCE_REF: ${{ inputs.source_ref }}
+        run: |
+          set -eo pipefail
+          ref="$SOURCE_REF"
+          safe=$(echo "$ref" | sed 's/[^A-Za-z0-9._-]/-/g')
+          safe=$(echo "$safe" | sed 's/^-//; s/-$//')
+          if [ -z "$safe" ]; then
+            safe="build"
+          fi
+          version=$(uv tree --depth 0 | grep "^[^├└│ ]" | head -1 | sed 's/.*v\([0-9.]*\).*/\1/' || echo "0.0.0")
+          exe_filename="pylocc-${safe}-v${version}.exe"
+          zip_filename="pylocc-${safe}-v${version}.zip"
+          artifact_name="pylocc-cli-executable"
+          {
+            echo "safe_ref=$safe"
+            echo "version=$version"
+            echo "exe_filename=$exe_filename"
+            echo "zip_filename=$zip_filename"
+            echo "artifact_name=$artifact_name"
+          } >> "$GITHUB_OUTPUT"
+
+  tests:
+    name: Reuse test workflow
+    needs: prepare
+    uses: ./.github/workflows/test-workflow.yml
+    with:
+      collect-coverage: false
+      checkout-ref: ${{ inputs.source_ref }}
+    permissions:
+      contents: read
+
+  build-executable:
+    name: Build CLI executable
+    needs:
+      - prepare
+      - tests
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Download UPX
+        shell: pwsh
+        run: |
+          $upxZip = "$env:RUNNER_TEMP\upx.zip"
+          Invoke-WebRequest -Uri "https://github.com/upx/upx/releases/download/v5.0.2/upx-5.0.2-win64.zip" -OutFile $upxZip -UseBasicParsing
+          Expand-Archive -Path $upxZip -DestinationPath "$env:RUNNER_TEMP\upx" -Force
+          "$env:RUNNER_TEMP\upx\upx-5.0.2-win64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Install dependencies
+        shell: pwsh
+        run: uv sync --locked --all-extras --no-dev
+
+      - name: Build executable
+        id: build
+        shell: bash
+        env:
+          EXE_FILENAME: ${{ needs.prepare.outputs.exe_filename }}
+        run: |
+          set -eo pipefail
+          exe_name="$EXE_FILENAME"
+          entry_path="src/pylocc/cli.py"
+          upx_dir="$(cygpath "${RUNNER_TEMP}")/upx/upx-5.0.2-win64"
+          scripts/build_exe.sh --name "$exe_name" --entry "$entry_path" -- --upx-dir "$upx_dir"
+          echo "exe_path=dist/$exe_name" >> "$GITHUB_OUTPUT"
+
+      - name: Smoke test executable
+        shell: pwsh
+        env:
+          EXE_FILENAME: ${{ needs.prepare.outputs.exe_filename }}
+        run: |
+          $exePath = "dist\$env:EXE_FILENAME"
+          if (-not (Test-Path $exePath)) {
+            throw "Executable not found at $exePath"
+          }
+          Write-Host "Running smoke test for $exePath"
+          & $exePath --help | Out-String | Out-Null
+          if ($LASTEXITCODE -ne 0) {
+            throw "Smoke test failed for $exePath"
+          }
+
+      - name: Package executable
+        id: package
+        shell: pwsh
+        env:
+          EXE_FILENAME: ${{ needs.prepare.outputs.exe_filename }}
+          ZIP_FILENAME: ${{ needs.prepare.outputs.zip_filename }}
+        run: |
+          $distDir = Join-Path $PWD "dist"
+          $exePath = Join-Path $distDir $env:EXE_FILENAME
+          if (-not (Test-Path $exePath)) {
+            throw "Executable not found at $exePath"
+          }
+          $zipPath = Join-Path $distDir $env:ZIP_FILENAME
+          Compress-Archive -Path $exePath -DestinationPath $zipPath -Force
+          "zip_path=$zipPath" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Upload executable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ needs.prepare.outputs.artifact_name }}
+          path: dist\${{ needs.prepare.outputs.zip_filename }}
+          if-no-files-found: error

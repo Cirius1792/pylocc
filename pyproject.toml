@@ -13,6 +13,7 @@ license-files = ["LICEN[CS]E*"]
 dependencies = [
     "click>=8.2.1",
     "prettytable>=3.16.0",
+    "pyinstaller>=6.16.0",
     "rich>=14.1.0",
 ]
 

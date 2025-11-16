@@ -13,6 +13,7 @@ jobs:
     uses: ./.github/workflows/test-workflow.yml
     permissions:
       actions: write # Required to upload artifacts
+      contents: read
 
   generate-badge:
     runs-on: ubuntu-latest
