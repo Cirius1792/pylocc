@@ -29,9 +29,6 @@ on:
       safe_ref:
         description: "Sanitized reference used in artifact naming"
         value: ${{ jobs.prepare.outputs.safe_ref }}
-    secrets:
-      GITHUB_TOKEN:
-        required: false
 
 jobs:
   prepare:
