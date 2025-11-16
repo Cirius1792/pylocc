@@ -89,7 +89,18 @@ cmd=(
   "$exe_name"
 )
 
+if [[ "${OSTYPE:-}" == msys* || "${OSTYPE:-}" == cygwin* || "${OS:-}" == "Windows_NT" ]]; then
+  data_sep=';'
+else
+  data_sep=':'
+fi
+cmd+=(
+  --add-data
+  "src/pylocc/language.json${data_sep}pylocc"
+)
+
 cmd+=("${extra_args[@]}")
 cmd+=("$entry_path")
 
 "${cmd[@]}"
+
