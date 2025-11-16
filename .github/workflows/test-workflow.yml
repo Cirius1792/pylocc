@@ -39,10 +39,11 @@ jobs:
         run: |
           uv sync --locked --all-extras --dev
           if [ "${{ inputs.collect-coverage }}" = "true" ]; then
-            uv run pytest --cov=cbl_stack -q
+            uv run pytest --cov=pylocc -q
           else
             uv run pytest -q
           fi
+
 
       - name: Upload coverage data
         if: ${{ inputs.collect-coverage && matrix.python-version == '3.13' }}
