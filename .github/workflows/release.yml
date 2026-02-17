@@ -42,7 +42,11 @@ jobs:
           COMMIT_SHA="${{ steps.resolve.outputs.sha }}"
           COMMIT_MSG=$(git log --format=%B -n 1 "$COMMIT_SHA")
           echo "commit-sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
-          echo "commit-message=$COMMIT_MSG" >> $GITHUB_OUTPUT
+          {
+            echo "commit-message<<EOF"
+            echo "$COMMIT_MSG"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
           echo "Commit message: $COMMIT_MSG"
 
       - name: Determine release parameters
@@ -276,4 +280,3 @@ jobs:
           asset_path: release-assets/${{ needs.build-executable.outputs.zip_filename }}
           asset_name: ${{ needs.build-executable.outputs.zip_filename }}
           asset_content_type: application/zip
-
