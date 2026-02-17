@@ -8183,5 +8183,50 @@
     "line_comment": ["*"],
     "multi_line": [],
     "quotes": []
+  },
+  "EASYTRIEVE": {
+    "complexitychecks": [
+      "if ",
+      "if(",
+      "else ",
+      "do ",
+      "do(",
+      "while ",
+      "while(",
+      "select ",
+      "when ",
+      "otherwise ",
+      "and ",
+      "or "
+    ],
+    "extensions": ["ezt", "ezy", "ezp", "etl"],
+    "line_comment": ["*"],
+    "multi_line": [],
+    "quotes": ["'", "\""]
+  },
+  "PLI": {
+    "complexitychecks": [
+      "if ",
+      "if(",
+      "else ",
+      "select ",
+      "when ",
+      "otherwise ",
+      "do ",
+      "do(",
+      "end ",
+      "while ",
+      "while(",
+      "until ",
+      "until(",
+      "&& ",
+      "|| ",
+      "!= ",
+      "== "
+    ],
+    "extensions": ["pli", "pl1", "pl/i"],
+    "line_comment": ["/*"],
+    "multi_line": [["/*", "*/"]],
+    "quotes": ["'", "\""]
   }
 }
