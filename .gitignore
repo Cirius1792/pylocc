@@ -14,3 +14,6 @@ benchmark_repos
 
 # Worktrees
 .worktrees/
+
+# Benchmark results
+benchmarks/results/
