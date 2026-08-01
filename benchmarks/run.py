@@ -4,6 +4,8 @@
 Usage:
     python benchmarks/run.py [--config path]
 """
+import json
+import subprocess
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -55,3 +57,47 @@ def _load_config(path: Path) -> Config:
         validated.append({"name": item["name"], "repo_url": item["repo_url"]})
 
     return Config(runs=runs, scenarios=validated)
+
+
+def _clone_repo(repo_url: str, dest: Path) -> None:
+    """Shallow-clone a repository into dest directory."""
+    try:
+        result = subprocess.run(
+            ["git", "clone", "--depth=1", repo_url, str(dest)],
+            capture_output=True, text=True, timeout=120, check=False
+        )
+        if result.returncode != 0:
+            print(f"Error: git clone failed for {repo_url}: {result.stderr.strip()}", file=sys.stderr)
+            sys.exit(1)
+    except subprocess.TimeoutExpired:
+        print(f"Error: git clone timed out for {repo_url}", file=sys.stderr)
+        sys.exit(1)
+
+
+def _count_files(dir_path: Path) -> int:
+    """Count how many files pylocc would scan in a directory.
+
+    Loads the same language.json config that pylocc uses to determine
+    supported extensions, then walks the directory counting matches.
+    """
+    lang_json = Path(__file__).parent.parent / "src" / "pylocc" / "language.json"
+    if not lang_json.exists():
+        print("Warning: cannot find pylocc language.json, using common extensions", file=sys.stderr)
+        return 0
+
+    with open(lang_json, encoding="utf-8") as f:
+        configs = json.load(f)
+
+    supported_exts = set()
+    for lang_name, lang_info in configs.items():
+        for ext in lang_info.get("extensions", []):
+            supported_exts.add(ext.lower())
+
+    count = 0
+    for entry in dir_path.rglob("*"):
+        if entry.is_file():
+            fname = entry.name
+            ext = fname.rsplit(".", 1)[-1].lower() if "." in fname else ""
+            if ext in supported_exts:
+                count += 1
+    return count
