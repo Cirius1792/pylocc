@@ -35,6 +35,7 @@ path = "build_hook.py"
 # Explicitly configure package contents for wheel/sdist so
 # non-Python resources are included without restricting modules.
 [tool.hatch.build.targets.wheel]
+exclude = ["benchmarks/**"]
 # Ensure language.json is packaged for runtime loading via importlib.resources
 [tool.hatch.build.targets.wheel.force-include]
 "src/pylocc/language.json" = "pylocc/language.json"
@@ -48,6 +49,7 @@ include = [
   "pyproject.toml",
   "build_hook.py",
 ]
+exclude = ["benchmarks/**"]
 
 [tool.hatch.build.targets.sdist.force-include]
 "src/pylocc/language.py" = "pylocc/language.py"
