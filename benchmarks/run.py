@@ -4,9 +4,14 @@
 Usage:
     python benchmarks/run.py [--config path]
 """
+import argparse
+import datetime
 import json
+import statistics
 import subprocess
 import sys
+import tempfile
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -101,3 +106,70 @@ def _count_files(dir_path: Path) -> int:
             if ext in supported_exts:
                 count += 1
     return count
+
+
+@dataclass
+class BenchmarkResult:
+    scenario_name: str
+    files_scanned: int = 0
+    timings: list[float] = field(default_factory=list)
+
+
+def _run_benchmark(dir_path: Path) -> float:
+    """Run pylocc on dir_path and return wall-clock elapsed seconds."""
+    start = time.perf_counter()
+    try:
+        result = subprocess.run(
+            ["pylocc", str(dir_path)],
+            capture_output=True, text=True, timeout=300, check=False
+        )
+    except FileNotFoundError:
+        print("Error: pylocc binary not found in PATH", file=sys.stderr)
+        sys.exit(1)
+    elapsed = time.perf_counter() - start
+
+    if result.returncode != 0:
+        print(f"Error: pylocc returned {result.returncode}: {result.stderr.strip()}", file=sys.stderr)
+        sys.exit(1)
+
+    return elapsed
+
+
+def _compute_stats(timings: list[float]) -> tuple[float, float, float, float]:
+    """Compute (median, stddev, min, max) for a list of timing values.
+
+    Uses population standard deviation for deterministic results across runs.
+    Single value returns 0.0 stddev.
+    """
+    if len(timings) == 1:
+        return (timings[0], 0.0, timings[0], timings[0])
+
+    mn = min(timings)
+    mx = max(timings)
+
+    median_val = float(statistics.median(timings))
+    sd_val = float(statistics.pstdev(timings))
+
+    return (median_val, sd_val, mn, mx)
+
+
+def _interleave_and_run(config: Config, repos: dict[str, tuple[Path, int]]) -> dict[str, BenchmarkResult]:
+    """Run benchmarks interleaved across scenarios to avoid cache bias.
+
+    For N runs and K scenarios: A B C ... A B C ... (N*K total invocations).
+    Returns a mapping of scenario_name -> BenchmarkResult with timings populated.
+    """
+    names = [s["name"] for s in config.scenarios]
+    results: dict[str, BenchmarkResult] = {name: BenchmarkResult(scenario_name=name) for name in names}
+
+    for run_num in range(config.runs):
+        print(f"  Run {run_num + 1}/{config.runs}: ", end="", flush=True)
+        for idx, name in enumerate(names):
+            repo_dir = repos[name][0]
+            timing = _run_benchmark(repo_dir)
+            results[name].timings.append(timing)
+            label = names[idx] if len(names) > 1 else f"A"
+            print(f"{label}={timing:.3f}s ", end="", flush=True)
+        print()
+
+    return results
