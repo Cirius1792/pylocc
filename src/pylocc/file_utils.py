@@ -15,9 +15,10 @@ def get_all_file_paths(folder: str, supported_extensions: List[str] = [])-> Iter
     if supported_extensions:
         extensions_set = set(supported_extensions)
 
+    # os.path.splitext is a C-level call and avoids allocating a Path object per file.
+    splitext = os.path.splitext
     for root, _, files in os.walk(folder):
         for file in files:
-            if not extensions_set or Path(file).suffix[1:] in extensions_set:
+            if not extensions_set or splitext(file)[1][1:] in extensions_set:
                 # return the path
                 yield os.path.join(root, file)
-    return None

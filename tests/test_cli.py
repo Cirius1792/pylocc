@@ -34,6 +34,37 @@ class TestCli(unittest.TestCase):
             self.assertEqual(result.exit_code, 0)
             self.assertIn('Total', result.output)
 
+    def test_pylocc_directory_jobs_sequential(self):
+        # Arrange
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            os.makedirs('test_dir')
+            with open('test_dir/test.py', 'w') as f:
+                f.write('print("hello world")')
+
+            # Act
+            result = runner.invoke(pylocc, ['--jobs', '1', 'test_dir'])
+
+            # Assert
+            self.assertEqual(result.exit_code, 0)
+            self.assertIn('Total', result.output)
+
+    def test_pylocc_directory_jobs_parallel(self):
+        # Arrange: an explicit --jobs > 1 forces the pool even for small trees.
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            os.makedirs('test_dir')
+            for i in range(3):
+                with open(f'test_dir/test_{i}.py', 'w') as f:
+                    f.write('print("hello world")\n')
+
+            # Act
+            result = runner.invoke(pylocc, ['--jobs', '2', 'test_dir'])
+
+            # Assert
+            self.assertEqual(result.exit_code, 0)
+            self.assertIn('Total', result.output)
+
     def test_pylocc_by_file(self):
         # Arrange
         runner = CliRunner()

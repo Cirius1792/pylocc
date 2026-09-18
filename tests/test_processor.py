@@ -78,6 +78,44 @@ class TestProcessor(TestCase):
         self.assertEqual(report.code, 4)
         self.assertEqual(report.comments, 0)
 
+    def test_should_count_zero_lines_for_empty_file(self):
+        report = count_locs([], file_configuration=self.text_config)
+        self.assertEqual(report.code, 0)
+        self.assertEqual(report.comments, 0)
+        self.assertEqual(report.blanks, 0)
+        self.assertEqual(report.total, 0)
+
+    def test_should_keep_multiline_state_when_line_comment_inside_block(self):
+        # The line-comment branch takes precedence over the multiline branch, so a line
+        # starting with the line-comment pattern inside an open multiline block is counted
+        # as a comment and does not close the block (matches the original semantics).
+        cfg = ProcessorConfiguration(
+            file_type=Language.PLAIN_TEXT,
+            file_extensions=['txt'],
+            line_comment=['#'],
+            multiline_comment=[['<#', '#>']]
+        )
+        text = ['<# block', '# inside', 'more', '#> end', 'code']
+        report = count_locs(text, file_configuration=cfg)
+        self.assertEqual(report.code, 0)
+        self.assertEqual(report.comments, 5)
+        self.assertEqual(report.total, 5)
+
+    def test_should_close_multiline_block_on_termination_line(self):
+        # When the terminating pattern does not start with the line-comment pattern,
+        # the block is closed and subsequent lines are counted as code.
+        cfg = ProcessorConfiguration(
+            file_type=Language.PLAIN_TEXT,
+            file_extensions=['txt'],
+            line_comment=['//'],
+            multiline_comment=[['/*', '*/']]
+        )
+        text = ['/* start', 'mid', 'end */', 'code']
+        report = count_locs(text, file_configuration=cfg)
+        self.assertEqual(report.code, 1)
+        self.assertEqual(report.comments, 3)
+        self.assertEqual(report.total, 4)
+
 
 class TestProcessorConfiguration(TestCase):
     def setUp(self):

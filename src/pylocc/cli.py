@@ -4,6 +4,7 @@ from rich.console import Console
 
 from pylocc.file_utils import get_all_file_paths
 from pylocc.processor import ProcessorConfigurationFactory, count_locs, load_default_language_config
+from pylocc.parallel import count_files_parallel, should_use_pool, suggested_worker_count
 from pylocc.reporter import aggregate_reports, create_aggregate_table, prepare_by_file_report, create_by_file_table
 
 import importlib.metadata
@@ -17,8 +18,11 @@ __version__ = importlib.metadata.version('pylocc')
               help='Generate report by file.')
 @click.option('--output', type=click.Path(exists=False, dir_okay=False, readable=True, writable=True),
               help='Stores the output report in csv format to the given path')
+@click.option('--jobs', '-j', 'jobs', type=int, default=None,
+              help='Number of parallel worker processes. Default is auto '
+                   '(parallel on large trees); use 1 to force sequential.')
 @click.version_option(version=__version__, prog_name='pylocc')
-def pylocc(file, by_file, output):
+def pylocc(file, by_file, output, jobs):
     """Run pylocc on the specified file or directory."""
     configs = load_default_language_config()
     supported_extensions = [
@@ -34,24 +38,32 @@ def pylocc(file, by_file, output):
         files = [file]
 
     per_file_reports = {}
-    for f in files:
-        try:
-            file_extension = os.path.splitext(f)[1][1:]
-            file_configuration = configuration_factory.get_configuration(
-                file_extension=file_extension)
+    if len(files) > 1 and should_use_pool(len(files), jobs):
+        # Count files in parallel; workers share one extension -> config map.
+        workers = jobs if jobs is not None and jobs > 1 else suggested_worker_count()
+        ext_to_config = {ext: config for config in configs for ext in config.file_extensions}
+        per_file_reports, errors = count_files_parallel(files, ext_to_config, workers)
+        for f, message in errors:
+            click.echo(f"Error processing file {f}: {message} Skipping...")
+    else:
+        for f in files:
+            try:
+                file_extension = os.path.splitext(f)[1][1:]
+                file_configuration = configuration_factory.get_configuration(
+                    file_extension=file_extension)
 
-            if not file_configuration:
-                click.echo(
-                    f"No configuration found for file type '{file_extension}' in file {f}. Skipping...")
+                if not file_configuration:
+                    click.echo(
+                        f"No configuration found for file type '{file_extension}' in file {f}. Skipping...")
+                    continue
+
+                with open(f, 'r', encoding='utf-8', errors='ignore', buffering=8192) as f_handle:
+                    report = count_locs(
+                        f_handle, file_configuration=file_configuration)
+                    per_file_reports[f] = report
+            except Exception as e:
+                click.echo(f"Error processing file {f}: {e} Skipping...")
                 continue
-
-            with open(f, 'r', encoding='utf-8', errors='ignore', buffering=8192) as f_handle:
-                report =count_locs(
-                    f_handle, file_configuration=file_configuration)
-                per_file_reports[f] = report
-        except Exception as e:
-            click.echo(f"Error processing file {f}: {e} Skipping...")
-            continue
     if per_file_reports:
         console = Console()
         report_data = None
