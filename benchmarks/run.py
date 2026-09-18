@@ -6,7 +6,6 @@ Usage:
 """
 import argparse
 import datetime
-import json
 import statistics
 import subprocess
 import sys
@@ -27,8 +26,11 @@ class Config:
     scenarios: list[dict[str, str]] = field(default_factory=list)
 
 
-def _validate_scenario(raw: dict[str, Any]) -> None:
-    """Validate a single scenario entry. Exits on missing fields."""
+def _validate_scenario(raw: Any) -> None:
+    """Validate a single scenario entry. Exits on missing/invalid fields."""
+    if not isinstance(raw, dict):
+        print(f"Error: each scenario must be a mapping, got: {raw!r}", file=sys.stderr)
+        sys.exit(1)
     if "name" not in raw or not isinstance(raw["name"], str) or not raw["name"].strip():
         print(f"Error: scenario is missing valid 'name' field", file=sys.stderr)
         sys.exit(1)
@@ -82,30 +84,22 @@ def _clone_repo(repo_url: str, dest: Path) -> None:
 def _count_files(dir_path: Path) -> int:
     """Count how many files pylocc would scan in a directory.
 
-    Loads the same language.json config that pylocc uses to determine
-    supported extensions, then walks the directory counting matches.
+    Reuses pylocc's own language config and file enumeration so the count
+    exactly matches what the pylocc CLI will scan.
     """
-    lang_json = Path(__file__).parent.parent / "src" / "pylocc" / "language.json"
-    if not lang_json.exists():
-        print("Warning: cannot find pylocc language.json, using common extensions", file=sys.stderr)
-        return 0
+    try:
+        from pylocc.file_utils import get_all_file_paths
+        from pylocc.processor import load_default_language_config
+    except ImportError as err:
+        print("Error: pylocc is not importable; install it first (e.g. `uv sync --locked --all-extras --dev`)",
+              file=sys.stderr)
+        sys.exit(1)
 
-    with open(lang_json, encoding="utf-8") as f:
-        configs = json.load(f)
-
-    supported_exts = set()
-    for lang_name, lang_info in configs.items():
-        for ext in lang_info.get("extensions", []):
-            supported_exts.add(ext.lower())
-
-    count = 0
-    for entry in dir_path.rglob("*"):
-        if entry.is_file():
-            fname = entry.name
-            ext = fname.rsplit(".", 1)[-1].lower() if "." in fname else ""
-            if ext in supported_exts:
-                count += 1
-    return count
+    configs = load_default_language_config()
+    supported_extensions = [
+        ext for config in configs for ext in config.file_extensions
+    ]
+    return sum(1 for _ in get_all_file_paths(str(dir_path), supported_extensions=supported_extensions))
 
 
 @dataclass
