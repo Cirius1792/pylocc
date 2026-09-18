@@ -11,3 +11,9 @@ src/pylocc/language.py
 .venv
 benchmark_repos
 .aider*
+
+# Worktrees
+.worktrees/
+
+# Benchmark results
+benchmarks/results/

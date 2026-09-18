@@ -1,0 +1,8 @@
+runs: 5
+
+scenarios:
+  - name: "pylocc-repo"
+    repo_url: "https://github.com/Cirius1792/pylocc.git"
+
+  - name: "redis-repo"
+    repo_url: "https://github.com/redis/redis.git"
