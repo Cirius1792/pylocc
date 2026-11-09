@@ -65,6 +65,20 @@ class TestCli(unittest.TestCase):
             self.assertEqual(result.exit_code, 0)
             self.assertIn('Total', result.output)
 
+    def test_pylocc_no_arguments_defaults_to_cwd(self):
+        # Arrange
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            with open('test.py', 'w') as f:
+                f.write('print("hello world")')
+
+            # Act
+            result = runner.invoke(pylocc, [])
+
+            # Assert
+            self.assertEqual(result.exit_code, 0)
+            self.assertIn('Total', result.output)
+
     def test_pylocc_by_file(self):
         # Arrange
         runner = CliRunner()

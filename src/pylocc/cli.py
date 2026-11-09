@@ -23,7 +23,13 @@ __version__ = importlib.metadata.version('pylocc')
                    '(parallel on large trees); use 1 to force sequential.')
 @click.version_option(version=__version__, prog_name='pylocc')
 def pylocc(file, by_file, output, jobs):
-    """Run pylocc on the specified file or directory."""
+    """Run pylocc on the specified file or directory.
+
+    When no file is given, the current working directory is scanned.
+    """
+    if file is None:
+        file = os.getcwd()
+
     configs = load_default_language_config()
     supported_extensions = [
         ext for config in configs for ext in config.file_extensions]
