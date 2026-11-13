@@ -1,5 +1,5 @@
 # Python Loc Counter - PYLOCC
-![Tests](https://github.com/cirius1792/pylocc/actions/workflows/tests.yml/badge.svg) ![Coverage](https://raw.githubusercontent.com/Cirius1792/pylocc/refs/heads/main/coverage.svg)
+![Tests](https://github.com/cltec/pylocc/actions/workflows/tests.yml/badge.svg) ![Coverage](https://raw.githubusercontent.com/Cirius1792/pylocc/refs/heads/main/coverage.svg)
 <p align="center">
     <img src="https://cirius1792.github.io/pylocc/img/pylocc_logo_transparent.png" alt="pylocc logo" width="400"/>
 </p>
@@ -9,7 +9,7 @@
 This project draws instiparion from [scc](https://github.com/boyter/scc) and uses the same language.json file. 
 
 ## Features
-Please have a look at the [documentaiton page](https://cirius1792.github.io/pylocc/) for more details. 
+Please have a look at the [documentaiton page](https://cltec.github.io/pylocc/) for more details. 
 
 *   Counts lines of code, comments, and blank lines.
 *   Supports a wide range of programming languages.
